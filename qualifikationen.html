@@ -463,7 +463,7 @@
   }
 
   .training-year::before {
-    content: "Jahr: ";
+    content: none;
     color: var(--text);
   }
 
@@ -491,12 +491,12 @@
   }
 
   .training-month::before {
-    content: "Monat: ";
+    content: none;
     color: var(--text);
   }
 
   .training-title::before {
-    content: "Titel: ";
+    content: "Thema: ";
     font-weight: 700;
     color: var(--text);
   }
@@ -839,14 +839,20 @@
   </style>
   <link rel="stylesheet" href="files/responsive.css">
 </head>
-<body class="qualifikationen-page">
+<body>
   <header>
     <div class="container nav">
       <a class="brand" href="home.html" aria-label="Zurück zur Startseite">
         <img class="brand-logo" src="files/Logo1.png" alt="Logo Tierpsychologie" />
       </a>
 
-      <nav aria-label="Hauptnavigation">
+      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="home.html">Home</a></li>
           <li><a href="philosophie.html">Philosophie</a></li>
@@ -1092,7 +1098,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 Tierpsychologie Seelenbund</div>
+      <div>© 2026 Tierpsychologie Bortels</div>
       <a href="#" id="open-impressum">Impressum</a>
     </div>
   </footer>
@@ -1147,9 +1153,32 @@
     });
   </script>
 
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteNav = document.querySelector(".site-nav");
+
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("open");
+        menuToggle.classList.toggle("open", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      siteNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          siteNav.classList.remove("open");
+          menuToggle.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    Tawk_API.onLoad=function(){ Tawk_API.minimize(); };
     (function(){
       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
       s1.async=true;

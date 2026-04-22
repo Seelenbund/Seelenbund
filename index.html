@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tierpsychologie | Intro</title>
+  
+  <script>
+    /* Mobile Geräte starten direkt auf home.html statt auf der Intro-Seite. */
+    if (window.matchMedia("(max-width: 900px), (pointer: coarse)").matches) {
+      window.location.replace("home.html");
+    }
+  </script>
   <style>
     :root {
       --overlay-light: rgba(32, 24, 18, 0.08);
