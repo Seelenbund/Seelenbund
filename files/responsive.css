@@ -1,0 +1,388 @@
+/* responsive.css
+   Gemeinsame Anpassungen für alle Seiten.
+   Diese Datei wird NACH dem eingebauten <style>-Block geladen und überschreibt nur Größen/Abstände.
+*/
+
+/* Grundidee:
+   - große Bildschirme behalten die geplante Optik
+   - schmalere/kleinere Bildschirme reduzieren Abstände, Bildgrößen und Schriftgrößen
+   - Inhalte bleiben innerhalb der verfügbaren Höhe besser sichtbar
+*/
+
+:root {
+  --fluid-gap: clamp(1rem, 2.2vw, 3rem);
+  --fluid-pad-x: clamp(1rem, 2vw, 1.9rem);
+  --fluid-pad-y: clamp(1rem, 2vh, 1.55rem);
+  --fluid-logo: clamp(190px, 18vw, 240px);
+  --fluid-card-radius: clamp(16px, 2vw, 22px);
+}
+
+.container {
+  width: min(calc(100% - clamp(1rem, 3vw, 2rem)), var(--max));
+}
+
+.brand-logo {
+  width: var(--fluid-logo);
+}
+
+.hero {
+  padding-top: clamp(1rem, 2.4vh, 2.2rem);
+  padding-bottom: clamp(0.8rem, 2vh, 1.4rem);
+}
+
+h1 {
+  font-size: clamp(1.05rem, 1.55vw, 1.9rem);
+}
+
+h2 {
+  font-size: clamp(1rem, 1.35vw, 1.35rem);
+}
+
+/* Home */
+.home-page .hero-grid {
+  grid-template-columns: minmax(360px, 460px) minmax(380px, 520px);
+  gap: var(--fluid-gap);
+}
+
+.home-page .hero-card {
+  max-width: min(460px, 100%);
+  padding: var(--fluid-pad-y) var(--fluid-pad-x);
+}
+
+.home-page .image-card {
+  width: min(520px, 100%);
+}
+
+.home-page .hero-actions {
+  margin-top: clamp(1.2rem, 3vh, 3rem);
+}
+
+/* Kontakt */
+.kontakt-page .hero-grid {
+  grid-template-columns: minmax(280px, 360px) minmax(420px, 560px);
+  gap: clamp(1.2rem, 2.2vw, 2.6rem);
+}
+
+.kontakt-page .floating-image-wrap {
+  width: min(390px, 100%);
+  min-height: clamp(260px, 45vh, 420px);
+}
+
+.kontakt-page .floating-image {
+  max-width: min(380px, 88vw);
+}
+
+.kontakt-page .hero-card {
+  width: min(560px, 100%);
+  max-width: 560px;
+  padding: clamp(1rem, 1.8vh, 1.15rem) clamp(1rem, 2vw, 1.45rem);
+}
+
+.kontakt-page .contact-info p {
+  font-size: clamp(0.78rem, 0.86vw, 0.92rem);
+  line-height: 1.48;
+}
+
+.kontakt-page .contact-form {
+  gap: clamp(0.55rem, 1.1vh, 0.75rem);
+  margin-top: clamp(0.55rem, 1.2vh, 0.85rem);
+}
+
+.kontakt-page .contact-form input,
+.kontakt-page .contact-form textarea {
+  padding: clamp(0.58rem, 1.2vh, 0.72rem) clamp(0.75rem, 1.4vw, 0.9rem);
+}
+
+.kontakt-page .contact-form textarea {
+  min-height: clamp(95px, 18vh, 125px);
+}
+
+/* Leistungen / Qualifikationen */
+.leistungen-page .service-card,
+.qualifikationen-page .service-card {
+  width: min(100%, 1080px);
+  padding: var(--fluid-pad-y) var(--fluid-pad-x);
+  max-height: min(620px, calc(100svh - var(--header-h) - var(--footer-h) - 2.2rem));
+}
+
+.leistungen-page .service-scroll,
+.qualifikationen-page .service-scroll {
+  max-height: min(560px, calc(100svh - var(--header-h) - var(--footer-h) - 7rem));
+}
+
+.leistungen-page .service-block,
+.qualifikationen-page .service-block {
+  padding: clamp(0.85rem, 1.4vw, 1.15rem);
+}
+
+.leistungen-page .service-block p,
+.leistungen-page .service-block li,
+.qualifikationen-page .service-block p,
+.qualifikationen-page .service-block li {
+  font-size: clamp(0.82rem, 0.92vw, 0.9rem);
+}
+
+.qualifikationen-page .training-row {
+  grid-template-columns: minmax(80px, 110px) minmax(260px, 1fr) minmax(160px, 230px);
+  gap: clamp(0.6rem, 1.4vw, 1rem);
+}
+
+/* Philosophie */
+.philosophie-page .hero-grid {
+  grid-template-columns: minmax(300px, 390px) minmax(380px, 460px);
+  gap: var(--fluid-gap);
+}
+
+.philosophie-page .image-card {
+  width: min(390px, 100%);
+}
+
+.philosophie-page .hero-card {
+  max-width: min(460px, 100%);
+  padding: var(--fluid-pad-y) var(--fluid-pad-x);
+  max-height: min(520px, calc(100svh - var(--header-h) - var(--footer-h) - 2.2rem));
+}
+
+.philosophie-page .intro-text {
+  max-height: min(460px, calc(100svh - var(--header-h) - var(--footer-h) - 8rem));
+}
+
+/* Intro / index */
+.intro-page .logo {
+  width: clamp(260px, 36vw, 470px);
+}
+
+.intro-page .logo-link {
+  left: clamp(5%, 10vw, 10%);
+}
+
+/* Wenn der Bildschirm weniger hoch ist, wird alles etwas kompakter. */
+@media (max-height: 780px) and (min-width: 761px) {
+  :root {
+    --fluid-logo: clamp(185px, 16vw, 220px);
+  }
+
+  .nav {
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .hero {
+    padding-top: 0.8rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .home-page .hero-card,
+  .kontakt-page .hero-card,
+  .philosophie-page .hero-card,
+  .leistungen-page .service-card,
+  .qualifikationen-page .service-card {
+    transform: scale(0.96);
+    transform-origin: center;
+  }
+
+  .home-page .hero-grid,
+  .kontakt-page .hero-grid,
+  .philosophie-page .hero-grid {
+    gap: clamp(1rem, 1.8vw, 2rem);
+  }
+
+  .home-page .hero-visual,
+  .philosophie-page .hero-visual {
+    aspect-ratio: 4 / 4.45;
+  }
+
+  .leistungen-page .service-card,
+  .qualifikationen-page .service-card {
+    max-height: calc(100svh - var(--header-h) - var(--footer-h) - 1.2rem);
+  }
+
+  .leistungen-page .service-scroll,
+  .qualifikationen-page .service-scroll {
+    max-height: calc(100svh - var(--header-h) - var(--footer-h) - 6rem);
+  }
+}
+
+@media (max-height: 680px) and (min-width: 761px) {
+  .home-page .hero-card,
+  .kontakt-page .hero-card,
+  .philosophie-page .hero-card,
+  .leistungen-page .service-card,
+  .qualifikationen-page .service-card {
+    transform: scale(0.91);
+  }
+
+  .home-page .intro-text p,
+  .kontakt-page .intro-text p,
+  .philosophie-page .intro-text p,
+  .leistungen-page .service-block p,
+  .leistungen-page .service-block li,
+  .qualifikationen-page .service-block p,
+  .qualifikationen-page .service-block li {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .home-page h1,
+  .kontakt-page h1,
+  .philosophie-page h1,
+  .leistungen-page h1,
+  .qualifikationen-page h1 {
+    margin-bottom: 0.8rem;
+  }
+}
+
+/* Schmalere Desktop-Displays: Layout bleibt zweispaltig, aber kompakter. */
+@media (max-width: 1120px) and (min-width: 981px) {
+  :root {
+    --fluid-logo: 210px;
+  }
+
+  .home-page .hero-grid {
+    grid-template-columns: minmax(330px, 420px) minmax(350px, 450px);
+  }
+
+  .kontakt-page .hero-grid {
+    grid-template-columns: minmax(250px, 330px) minmax(400px, 520px);
+  }
+
+  .philosophie-page .hero-grid {
+    grid-template-columns: minmax(300px, 360px) minmax(360px, 430px);
+  }
+
+  nav ul {
+    gap: 0.55rem;
+  }
+
+  nav a {
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    font-size: 0.94rem;
+  }
+}
+
+/* Tablet und Handy: alles untereinander, kein erzwungenes Mini-Zoomen. */
+@media (max-width: 980px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  main {
+    overflow-y: auto;
+  }
+
+  .home-page .hero-grid,
+  .kontakt-page .hero-grid,
+  .philosophie-page .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .hero-card,
+  .kontakt-page .hero-card,
+  .philosophie-page .hero-card,
+  .home-page .image-card,
+  .philosophie-page .image-card,
+  .kontakt-page .floating-image-wrap {
+    justify-self: center;
+  }
+
+  .leistungen-page .service-card,
+  .qualifikationen-page .service-card,
+  .leistungen-page .service-scroll,
+  .qualifikationen-page .service-scroll,
+  .philosophie-page .hero-card,
+  .philosophie-page .intro-text {
+    max-height: none;
+  }
+
+  .kontakt-page .floating-image-wrap {
+    min-height: 260px;
+  }
+
+  .intro-page .logo-link {
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+  }
+
+  .intro-page .logo {
+    width: min(62vw, 390px);
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-h: 150px;
+    --fluid-logo: 190px;
+  }
+
+  .hero {
+    align-items: flex-start;
+  }
+
+  .service-card {
+    border-radius: 18px;
+  }
+
+  .service-head {
+    gap: 0.55rem;
+  }
+
+  .qualifikationen-page .training-row {
+    grid-template-columns: 1fr;
+  }
+
+  .qualifikationen-page .training-row.training-head {
+    display: none;
+  }
+
+  .qualifikationen-page .training-month::before {
+    content: "Jahr: ";
+    color: var(--text);
+  }
+
+  .qualifikationen-page .training-title::before {
+    content: "Thema: ";
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .qualifikationen-page .training-teacher::before {
+    content: "Dozent/in: ";
+    font-weight: 700;
+    color: var(--text);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --fluid-logo: 160px;
+  }
+
+  .container {
+    width: min(calc(100% - 1rem), var(--max));
+  }
+
+  .home-page .hero-actions,
+  .kontakt-page .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn,
+  .submit-btn {
+    width: 100%;
+  }
+
+  .kontakt-page .floating-image-wrap {
+    min-height: 220px;
+  }
+
+  .kontakt-page .floating-image {
+    max-width: 290px;
+  }
+
+  .intro-page .logo {
+    width: min(76vw, 330px);
+  }
+}
