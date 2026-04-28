@@ -411,27 +411,100 @@
     }
 
     .hero-visual {
-      border-radius: 18px;
-      aspect-ratio: 4 / 6.5;
-      width: 100%;
-      background:
-        linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.10)),
-        url('files/FotoHundPia.jpg') center center / cover no-repeat;
-      display: block;
-      box-shadow:
-        inset 0 0 18px rgba(255,255,255,0.18),
-        0 16px 30px rgba(99,74,58,0.10);
-      filter: saturate(1) brightness(1) contrast(1);
-      transition: filter 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
-    }
+  position: relative;
+  border-radius: 18px;
+  aspect-ratio: 4 / 6.5;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  box-shadow:
+    inset 0 0 18px rgba(255,255,255,0.18),
+    0 16px 30px rgba(99,74,58,0.10);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-    .hero-visual:hover {
-      filter: saturate(1.2) brightness(1.04) contrast(1.05);
-      transform: scale(1.015);
-      box-shadow:
-        inset 0 0 18px rgba(255,255,255,0.22),
-        0 20px 36px rgba(99,74,58,0.14);
-    }
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease,
+    filter 0.55s ease;
+}
+
+.hero-visual::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.10)),
+    url('files/FotoHundPia.jpg');
+  opacity: 1;
+  z-index: 1;
+  filter: saturate(1) brightness(1) contrast(1);
+}
+
+.hero-visual::after {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.10)),
+    url('files/pia2026.jpg');
+  opacity: 0;
+  z-index: 2;
+  filter: saturate(1.08) brightness(1.03) contrast(1.04);
+  transform: scale(1.02);
+}
+
+.hero-visual:hover {
+  transform: scale(1.015);
+  box-shadow:
+    inset 0 0 18px rgba(255,255,255,0.22),
+    0 20px 36px rgba(99,74,58,0.14);
+}
+
+.hero-visual:hover::before {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+.hero-visual:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-visual .image-label {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  z-index: 3;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.96);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  transition: opacity 0.35s ease;
+}
+
+.hero-visual .image-label-hover {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  z-index: 4;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.96);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.hero-visual:hover .image-label {
+  opacity: 0;
+}
+
+.hero-visual:hover .image-label-hover {
+  opacity: 1;
+}
 
     footer {
       position: fixed;
@@ -808,23 +881,28 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="image-card">
-          <div class="hero-visual"></div>
+          <div class="hero-visual">
+  <span class="image-label">Pia 1993</span>
+  <span class="image-label-hover">Pia 2026</span>
+</div>
         </div>
 
         <div class="hero-card">
-          <h1>Meine Philosophie</h1>
+          <h1>Ein wenig über mich...</h1>
 
           <div class="intro-text">
-            <p>Schon seit meiner Kindheit fühle ich mich eng mit Tieren verbunden und habe die meiste Zeit gerne mit ihnen verbracht. Früh habe ich gelernt, Verantwortung zu übernehmen und achtsam mit unseren Haustieren sowie auch mit Wildtieren umzugehen.</p>
+  <p>Schon seit meiner Kindheit fühle ich mich eng mit Tieren verbunden und habe meine Zeit gerne mit ihnen verbracht. Früh habe ich gelernt, Verantwortung zu übernehmen und achtsam mit unseren Haustieren sowie auch mit Wildtieren umzugehen. Tiere gaben mir immer das Gefühl, willkommen zu sein und bedingungslos geliebt zu werden.</p>
 
-            <p>Ich bin überzeugt davon, dass das Zusammenleben von Mensch und Tier besonders harmonisch sein kann, wenn wir bereit sind, genauer hinzuschauen und einander wirklich zu verstehen. Auch der Blick auf das eigene Verhalten spielt dabei eine wichtige Rolle.</p>
+  <p>Mir war immer klar, wenn auch oft im Verborgenen, dass ich etwas mit Tieren machen möchte.</p>
 
-            <p>Manchmal hilft es, eine neutrale Perspektive von außen zu bekommen, um Veränderungen im Verhalten besser einordnen zu können. Genau hier möchte ich Sie unterstützen. Gemeinsam gehen wir den möglichen Ursachen auf den Grund und finden Wege, die zu Ihnen und Ihrem Tier passen.</p>
+  <p>Der Beruf der Tierpsychologin kam mir sehr entgegen. Mein Anliegen ist es, eine Verbindung zwischen Mensch und Tier zu schaffen, denn ich bin überzeugt davon, dass das Zusammenleben von Mensch und Tier besonders harmonisch sein kann, wenn wir bereit sind, genauer hinzuschauen und einander wirklich zu verstehen. Auch der Blick auf das eigene Verhalten spielt dabei eine wichtige Rolle.</p>
 
-            <p>Ich lade Sie herzlich ein, sich nicht erst in akuten Krisensituationen an mich zu wenden, sondern auch dann, wenn Sie erste kleine Veränderungen im Verhalten Ihres Tieres bemerken. Tiere zeigen oft früh leise Signale, die leicht übersehen werden können. Je früher wir hinschauen, desto besser können wir das Wohlbefinden Ihres Tieres unterstützen.</p>
+  <p>Manchmal hilft es, eine neutrale Perspektive von außen zu bekommen, um Veränderungen im Verhalten besser einordnen zu können. Genau hier möchte ich Sie unterstützen. Gemeinsam gehen wir den möglichen Ursachen auf den Grund und finden Wege, die zu Ihnen und Ihrem Tier passen.</p>
 
-            <p>Meine Arbeit basiert auf einem respektvollen, gewaltfreien Umgang und orientiert sich an aktuellen wissenschaftlichen Erkenntnissen. Ich arbeite ausschließlich mit positiver Verstärkung, um eine vertrauensvolle und stabile Beziehung zwischen Mensch und Tier zu fördern.</p>
-          </div>
+  <p>Ich lade Sie herzlich ein, sich nicht erst in akuten Krisensituationen an mich zu wenden, sondern auch dann, wenn Sie erste kleine Veränderungen im Verhalten Ihres Tieres bemerken. Tiere zeigen oft früh leise Signale, die leicht übersehen werden können. Je früher wir hinschauen, desto schneller können wir Situationen abfangen, die später vielleicht zu Problemen führen.</p>
+
+  <p>Meine Arbeit basiert auf einem respektvollen, gewaltfreien Umgang und orientiert sich an aktuellen wissenschaftlichen Erkenntnissen. Ich arbeite mit positiver Verstärkung, um eine vertrauensvolle und ruhige Beziehung zwischen Mensch und Tier zu fördern.</p>
+</div>
         </div>
       </div>
     </section>
@@ -883,7 +961,7 @@
         <p>Pia Bortels</p>
         <p>Alte Stöckener Str. 94</p>
         <p>30149 Hannover</p>
-        <p>E-Mail: pia.bortels@web.de</p>
+        <p>E-Mail: info@tierpsychologie-seelenbund.de</p>
         <p>Telefon: 0176 87925330</p>
       </div>
     </div>
@@ -891,7 +969,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 Tierpsychologie Bortels</div>
+      <div>© 2026 Tierpsychologie Seelenbund</div>
       <a href="#" id="open-impressum">Impressum</a>
     </div>
   </footer>
