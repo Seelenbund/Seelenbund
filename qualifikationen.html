@@ -508,27 +508,44 @@
   }
 }
 
-    .logo-block {
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 1.2rem;
-      align-items: center;
-    }
+ .logo-block {
+display: grid;
+grid-template-columns: 1fr 170px;
+gap: 1.2rem;
+align-items: center;
 
-    .atn-logo-link {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 170px;
-      height: 170px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.48);
-      border: 1px solid rgba(255,255,255,0.52);
-      box-shadow:
-        0 8px 22px rgba(99, 74, 58, 0.06),
-        inset 0 1px 8px rgba(255,255,255,0.22);
-      transition: 0.25s ease;
-    }
+}
+
+.logo-block > div {
+grid-column: 1;
+grid-row: 1;
+
+}
+
+.atn-logo-link {
+grid-column: 2;
+grid-row: 1;
+justify-self: end;
+
+}
+
+.atn-logo-link {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 170px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.48);
+  border: 1px solid rgba(255,255,255,0.52);
+  box-shadow:
+    0 8px 22px rgba(99, 74, 58, 0.06),
+    inset 0 1px 8px rgba(255,255,255,0.22);
+  transition: 0.25s ease;
+}
 
     .atn-logo-link:hover {
       transform: translateY(-2px);
@@ -731,24 +748,30 @@
     }
 
     @media (max-width: 980px) {
-      .brand-logo {
-        width: 210px;
-      }
+  .brand-logo {
+    width: 210px;
+  }
 
-      .service-card {
-        max-height: none;
-      }
+  .service-card {
+    max-height: none;
+  }
 
-      .service-scroll {
-        max-height: none;
-      }
+  .service-scroll {
+    max-height: none;
+  }
 
-      .logo-block {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-      }
-    }
+  .logo-block {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .logo-block > div,
+  .atn-logo-link {
+    grid-column: auto;
+    justify-self: center;
+  }
+}
 
     @media (max-width: 760px) {
       :root {
@@ -908,7 +931,7 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
 
 <div class="service-block">
   <div class="service-head">
-    <h2>Fortbildungen &amp; Fachthemen</h2>
+    <h2>Fortbildungen &amp; Fachseminare</h2>
   </div>
 
   <div class="training-table">
@@ -1190,5 +1213,6 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
     })();
   </script>
   <!--End of Tawk.to Script-->
+<script src="files/responsive.js"></script>
 </body>
 </html>
