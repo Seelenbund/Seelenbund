@@ -388,6 +388,7 @@
       line-height: 1.65;
       color: var(--text);
       margin-bottom: 0.75rem;
+      white-space: pre-line;
     }
 
     .service-block ul {
@@ -408,144 +409,80 @@
       color: var(--text-soft);
       font-size: 0.88rem;
     }
-.training-table {
-  display: grid;
-  gap: 0.45rem;
-  margin-top: 0.9rem;
-  margin-bottom: 1.2rem;
-}
 
-.training-row {
-  display: grid;
-  grid-template-columns: 90px 1fr 230px;
-  gap: 1rem;
-  align-items: start;
-  padding: 0.75rem 0.85rem;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.46);
-  border: 1px solid rgba(255,255,255,0.52);
-  box-shadow:
-    0 6px 16px rgba(99, 74, 58, 0.045),
-    inset 0 1px 6px rgba(255,255,255,0.18);
-}
+    .training-table {
+      display: grid;
+      gap: 0.45rem;
+      margin-top: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
 
-.training-row.training-head {
-  background: rgba(216, 190, 165, 0.20);
-  box-shadow: none;
-  font-weight: 700;
-  color: var(--text);
-}
+    .training-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 230px;
+      gap: 1rem;
+      align-items: start;
+      padding: 0.75rem 0.85rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.46);
+      border: 1px solid rgba(255,255,255,0.52);
+      box-shadow:
+        0 6px 16px rgba(99, 74, 58, 0.045),
+        inset 0 1px 6px rgba(255,255,255,0.18);
+    }
 
-.training-year,
-.training-topic,
-.training-teacher {
-  font-size: 0.88rem;
-  line-height: 1.45;
-}
+    .training-row.training-head {
+      background: rgba(216, 190, 165, 0.20);
+      box-shadow: none;
+      font-weight: 700;
+      color: var(--text);
+    }
 
-.training-year {
-  font-weight: 700;
-  color: #a97f60;
-}
+    .training-year,
+    .training-topic,
+    .training-teacher {
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
 
-.training-teacher {
-  color: var(--text-soft);
-}
+    .training-year {
+      font-weight: 700;
+      color: #a97f60;
+    }
 
-@media (max-width: 760px) {
-  .training-row {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
-  }
+    .training-teacher {
+      color: var(--text-soft);
+    }
 
-  .training-row.training-head {
-    display: none;
-  }
+    .logo-block {
+      display: grid;
+      grid-template-columns: 1fr 170px;
+      gap: 1.2rem;
+      align-items: center;
+    }
 
-  .training-year::before {
-    content: none;
-    color: var(--text);
-  }
+    .logo-block > div {
+      grid-column: 1;
+      grid-row: 1;
+    }
 
-  .training-topic::before {
-    content: "Thema: ";
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .training-teacher::before {
-    content: "Dozent/in: ";
-    font-weight: 700;
-    color: var(--text);
-  }
-}
-
-@media (max-width: 760px) {
-  .training-row {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
-  }
-
-  .training-row.training-head {
-    display: none;
-  }
-
-  .training-month::before {
-    content: none;
-    color: var(--text);
-  }
-
-  .training-title::before {
-    content: "Thema: ";
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .training-teacher::before {
-    content: "Dozent/in: ";
-    font-weight: 700;
-    color: var(--text);
-  }
-}
-
- .logo-block {
-display: grid;
-grid-template-columns: 1fr 170px;
-gap: 1.2rem;
-align-items: center;
-
-}
-
-.logo-block > div {
-grid-column: 1;
-grid-row: 1;
-
-}
-
-.atn-logo-link {
-grid-column: 2;
-grid-row: 1;
-justify-self: end;
-
-}
-
-.atn-logo-link {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: end;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 170px;
-  height: 170px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.48);
-  border: 1px solid rgba(255,255,255,0.52);
-  box-shadow:
-    0 8px 22px rgba(99, 74, 58, 0.06),
-    inset 0 1px 8px rgba(255,255,255,0.22);
-  transition: 0.25s ease;
-}
+    .atn-logo-link {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 170px;
+      height: 170px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.48);
+      border: 1px solid rgba(255,255,255,0.52);
+      box-shadow:
+        0 8px 22px rgba(99, 74, 58, 0.06),
+        inset 0 1px 8px rgba(255,255,255,0.22);
+      transition: 0.25s ease;
+    }
 
     .atn-logo-link:hover {
       transform: translateY(-2px);
@@ -748,79 +685,31 @@ justify-self: end;
     }
 
     @media (max-width: 980px) {
-  .brand-logo {
-    width: 210px;
-  }
-
-  .service-card {
-    max-height: none;
-  }
-
-  .service-scroll {
-    max-height: none;
-  }
-
-  .logo-block {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .logo-block > div,
-  .atn-logo-link {
-    grid-column: auto;
-    justify-self: center;
-  }
-}
-
-    @media (max-width: 760px) {
-      :root {
-        --header-h: 150px;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.4rem 0;
-      }
-
-      .nav::after {
-        width: 70%;
-        left: 15%;
-      }
-
-      .brand {
-        justify-content: center;
-      }
-
       .brand-logo {
-        width: 190px;
-      }
-
-      nav ul {
-        justify-content: center;
-        gap: 0.75rem;
-      }
-
-      nav a {
-        padding: 0.28rem 0.62rem;
-        font-size: 0.96rem;
-      }
-
-      .hero {
-        padding-top: 2.4rem;
+        width: 210px;
       }
 
       .service-card {
-        padding: 1.25rem;
+        max-height: none;
       }
 
-      .service-head {
-        flex-direction: column;
-        gap: 0.55rem;
+      .service-scroll {
+        max-height: none;
+      }
+
+      .logo-block {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .logo-block > div,
+      .atn-logo-link {
+        grid-column: auto;
+        justify-self: center;
       }
     }
+
 
     @media (max-width: 480px) {
       .container {
@@ -859,10 +748,15 @@ justify-self: end;
         white-space: nowrap;
       }
     }
+@media (min-width: 761px) {
+  .year-title {
+    display: none !important;
+  }
+}
   </style>
   <link rel="stylesheet" href="files/responsive.css">
 </head>
-<body>
+<body class="qualifikationen-page">
   <header>
     <div class="container nav">
       <a class="brand" href="home.html" aria-label="Zurück zur Startseite">
@@ -894,212 +788,203 @@ justify-self: end;
           <h1>Qualifikationen</h1>
 
           <div class="service-scroll">
-  <div class="service-block">
-    <div class="service-head">
-    </div>
+            <div class="service-block">
+              <div class="service-head"></div>
 
-    <div class="logo-block">
-      <a
-        class="atn-logo-link"
-        title="ATN Tierpsychologie Absolvent - Tierpsychologie Ausbildung"
-        href="https://atn-akademie.com/tierpsychologie-ausbildung/"
-        target="_blank"
-        rel="noopener"
-      >
-        <img
-          width="302"
-          height="302"
-          decoding="async"
-          src="https://atn-akademie.com/wp-content/uploads/2022/05/atn-absolvent-tierpsychologie-ausbildung-atn-akademie_v1.png"
-          title="ATN Tierpsychologie Absolvent - Tierpsychologie Ausbildung"
-          alt="ATN Tierpsychologie Absolvent - Tierpsychologie Ausbildung"
-        />
-      </a>
+              <div class="logo-block">
+                <a
+                  class="atn-logo-link"
+                  title="ATN Tierpsychologie Absolvent - Tierpsychologie Ausbildung"
+                  href="https://atn-akademie.com/tierpsychologie-ausbildung/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    width="302"
+                    height="302"
+                    decoding="async"
+                    src="https://atn-akademie.com/wp-content/uploads/2022/05/atn-absolvent-tierpsychologie-ausbildung-atn-akademie_v1.png"
+                    title="ATN Tierpsychologie Absolvent - Tierpsychologie Ausbildung"
+                    alt="ATN Tierpsychologie Absolvent - Tierpsychologie Ausbildung"
+                  />
+                </a>
 
-      <div>
-        <p>
-          Studium der Tierpsychologie an der renommierten ATN Schweiz
+                <div>
+                  <p>Studium der Tierpsychologie an der renommierten ATN Schweiz
 Ich arbeite ruhig, geduldig und individuell. Jedes Tier bringt seine eigene Geschichte, seine eigenen Erfahrungen und seine eigenen Bedürfnisse mit.
 
 Deshalb gibt es bei mir keine pauschalen Standardlösungen, sondern eine genaue Betrachtung der jeweiligen Situation und passende Schritte, die im Alltag wirklich umsetzbar sind.
 
-Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sicherer fühlt, Vertrauen aufbauen kann und Mensch und Tier wieder mehr Klarheit im gemeinsamen Alltag gewinnen.
-        </p>
-      </div>
-    </div>
-  </div>
+Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sicherer fühlt, Vertrauen aufbauen kann und Mensch und Tier wieder mehr Klarheit im gemeinsamen Alltag gewinnen.</p>
+                </div>
+              </div>
+            </div>
 
-<div class="service-block">
-  <div class="service-head">
-    <h2>Fortbildungen &amp; Fachseminare</h2>
-  </div>
+            <div class="service-block">
+              <div class="service-head">
+                <h2>Fortbildungen &amp; Fachseminare</h2>
+              </div>
 
-  <div class="training-table">
-    <div class="training-row training-head">
-      <div>2026</div>
-      <div>Thema</div>
-      <div>Dozent/in</div>
-    </div>
+              <div class="training-table" data-year="2026">
+                <div class="training-row training-head">
+                  <div>2026</div>
+                  <div>Thema</div>
+                  <div>Dozent/in</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">März</div>
-      <div class="training-topic">Kind und Hund Teil 2</div>
-      <div class="training-teacher">Tina Alt</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">März</div>
+                  <div class="training-topic">Kind und Hund Teil 2</div>
+                  <div class="training-teacher">Tina Alt</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">März</div>
-      <div class="training-topic">Kind und Hund Teil 1</div>
-      <div class="training-teacher">Tina Alt</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">März</div>
+                  <div class="training-topic">Kind und Hund Teil 1</div>
+                  <div class="training-teacher">Tina Alt</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Februar</div>
-      <div class="training-topic">Deprivation-Praxis</div>
-      <div class="training-teacher">Wibke Hagemann</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">Februar</div>
+                  <div class="training-topic">Deprivation-Praxis</div>
+                  <div class="training-teacher">Wibke Hagemann</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Februar</div>
-      <div class="training-topic">Suchtverhalten bei Hunden</div>
-      <div class="training-teacher">Bettina Bombosch, Stefanie Schramm</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">Februar</div>
+                  <div class="training-topic">Suchtverhalten bei Hunden</div>
+                  <div class="training-teacher">Bettina Bombosch, Stefanie Schramm</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Februar</div>
-      <div class="training-topic">Deprivation-Theorie</div>
-      <div class="training-teacher">Wibke Hagemann</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">Februar</div>
+                  <div class="training-topic">Deprivation-Theorie</div>
+                  <div class="training-teacher">Wibke Hagemann</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Januar</div>
-      <div class="training-topic">Resilienz im Hundetraining – warum Training manchmal nicht greift</div>
-      <div class="training-teacher">Kerstin Denzer</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">Januar</div>
+                  <div class="training-topic">Resilienz im Hundetraining – warum Training manchmal nicht greift</div>
+                  <div class="training-teacher">Kerstin Denzer</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Januar</div>
-      <div class="training-topic">Canine PTBS</div>
-      <div class="training-teacher">Maria Hense</div>
-    </div>
-  </div>
+                <div class="training-row">
+                  <div class="training-year">Januar</div>
+                  <div class="training-topic">Canine PTBS</div>
+                  <div class="training-teacher">Maria Hense</div>
+                </div>
+              </div>
 
-  <div class="training-table">
-    <div class="training-row training-head">
-      <div>2025</div>
-      <div>Thema</div>
-      <div>Dozent/in</div>
-    </div>
+              <div class="training-table" data-year="2025">
+                <div class="training-row training-head">
+                  <div>2025</div>
+                  <div>Thema</div>
+                  <div>Dozent/in</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Dezember</div>
-      <div class="training-topic">Das Leben mit körperbehinderten Hunden und ihre Besonderheiten</div>
-      <div class="training-teacher">Sonja Huber</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">Dezember</div>
+                  <div class="training-topic">Das Leben mit körperbehinderten Hunden und ihre Besonderheiten</div>
+                  <div class="training-teacher">Sonja Huber</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">November</div>
-      <div class="training-topic">Haftungsgrundlagen der Arbeit als Tierberufler</div>
-      <div class="training-teacher">RA Andreas Ackenheil</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">November</div>
+                  <div class="training-topic">Haftungsgrundlagen der Arbeit als Tierberufler</div>
+                  <div class="training-teacher">RA Andreas Ackenheil</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">November</div>
-      <div class="training-topic">Schilddrüse und Verhalten beim Hund</div>
-      <div class="training-teacher">Katrin Voigt</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">November</div>
+                  <div class="training-topic">Schilddrüse und Verhalten beim Hund</div>
+                  <div class="training-teacher">Katrin Voigt</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Oktober</div>
-      <div class="training-topic">Wenn das Ohr juckt – Ursachen, Diagnostik und Therapiemanagement der Otitis bei Hund und Katze, Fallbeispiele Teil 02</div>
-      <div class="training-teacher">Antonia Flade</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">Oktober</div>
+                  <div class="training-topic">Wenn das Ohr juckt – Ursachen, Diagnostik und Therapiemanagement der Otitis bei Hund und Katze, Fallbeispiele Teil 02</div>
+                  <div class="training-teacher">Antonia Flade</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">August</div>
-      <div class="training-topic">Wenn das Ohr juckt – Ursachen, Diagnostik und Therapiemanagement der Otitis bei Hund und Katze</div>
-      <div class="training-teacher">Antonia Flade</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">August</div>
+                  <div class="training-topic">Wenn das Ohr juckt – Ursachen, Diagnostik und Therapiemanagement der Otitis bei Hund und Katze</div>
+                  <div class="training-teacher">Antonia Flade</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Juli</div>
-      <div class="training-topic">Zahnheilkunde Nager &amp; Kaninchen</div>
-      <div class="training-teacher">Dr. Klaus Peter Raab</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">Juli</div>
+                  <div class="training-topic">Zahnheilkunde Nager &amp; Kaninchen</div>
+                  <div class="training-teacher">Dr. Klaus Peter Raab</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Juli</div>
-      <div class="training-topic">Zahnheilkunde Hund und Katze</div>
-      <div class="training-teacher">Dr. Klaus Peter Raab</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">Juli</div>
+                  <div class="training-topic">Zahnheilkunde Hund und Katze</div>
+                  <div class="training-teacher">Dr. Klaus Peter Raab</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">April</div>
-      <div class="training-topic">Datenschutz für Tierberufler</div>
-      <div class="training-teacher">Rechtsanwältin Daniela Müller</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">April</div>
+                  <div class="training-topic">Datenschutz für Tierberufler</div>
+                  <div class="training-teacher">Rechtsanwältin Daniela Müller</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">März</div>
-      <div class="training-topic">Halsbänder, Geschirr und Leinen beim Hund</div>
-      <div class="training-teacher">Prof. Dr. med. vet. Christoph Mülling</div>
-    </div>
+                <div class="training-row">
+                  <div class="training-year">März</div>
+                  <div class="training-topic">Halsbänder, Geschirr und Leinen beim Hund</div>
+                  <div class="training-teacher">Prof. Dr. med. vet. Christoph Mülling</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Januar</div>
-      <div class="training-topic">Besondere rechtliche Grundlagen der Arbeit mit der Tierart Hund</div>
-      <div class="training-teacher">Rechtsanwältin Daniela Müller</div>
-    </div>
-  </div>
+                <div class="training-row">
+                  <div class="training-year">Januar</div>
+                  <div class="training-topic">Besondere rechtliche Grundlagen der Arbeit mit der Tierart Hund</div>
+                  <div class="training-teacher">Rechtsanwältin Daniela Müller</div>
+                </div>
+              </div>
 
-  <div class="training-table">
-    <div class="training-row training-head">
-      <div>2024</div>
-      <div>Thema</div>
-      <div>Dozent/in</div>
-    </div>
+              <div class="training-table" data-year="2024">
+                <div class="training-row training-head">
+                  <div>2024</div>
+                  <div>Thema</div>
+                  <div>Dozent/in</div>
+                </div>
 
-    <div class="training-row">
-      <div class="training-year">Dezember</div>
-      <div class="training-topic">Herausforderungen und Hürden bei der Aufnahme und Vermittlung von Tierheimhunden</div>
-      <div class="training-teacher">Sandra Barfels</div>
-    </div>
-  </div>
-</div>
+                <div class="training-row">
+                  <div class="training-year">Dezember</div>
+                  <div class="training-topic">Herausforderungen und Hürden bei der Aufnahme und Vermittlung von Tierheimhunden</div>
+                  <div class="training-teacher">Sandra Barfels</div>
+                </div>
+              </div>
+            </div>
 
-  <div class="service-block">
-    <div class="service-head">
-      <h2>Schwerpunkte meiner Arbeit</h2>
-    </div>
+            <div class="service-block">
+              <div class="service-head">
+                <h2>Schwerpunkte meiner Arbeit</h2>
+              </div>
 
-    <ul>
-      <li>Angsthunde und unsichere Hunde im häuslichen Umfeld</li>
-      <li>Hunde aus dem Ausland und sensible Eingewöhnungsphasen</li>
-      <li>Verhaltensberatung mit Blick auf Alltag, Beziehung und Kommunikation</li>
-      <li>Beratung vor der Anschaffung eines Haustieres</li>
-      <li>Ruhige Ursachenanalyse und alltagstaugliche Lösungswege</li>
-      <li>Gewaltfreies Arbeiten auf Basis positiver Verstärkung</li>
-    </ul>
-  </div>
+              <ul>
+                <li>Angsthunde und unsichere Hunde im häuslichen Umfeld</li>
+                <li>Hunde aus dem Ausland und sensible Eingewöhnungsphasen</li>
+                <li>Verhaltensberatung mit Blick auf Alltag, Beziehung und Kommunikation</li>
+                <li>Beratung vor der Anschaffung eines Haustieres</li>
+                <li>Ruhige Ursachenanalyse und alltagstaugliche Lösungswege</li>
+                <li>Gewaltfreies Arbeiten auf Basis positiver Verstärkung</li>
+              </ul>
+            </div>
 
-  <div class="service-block">
-    <div class="service-head">
-      <h2>Meine Arbeitsweise</h2>
-    </div>
+            <div class="service-block">
+              <div class="service-head">
+                <h2>Meine Arbeitsweise</h2>
+              </div>
 
-    <p>
-      Ich arbeite ruhig, geduldig und individuell. Jedes Tier bringt seine eigene Geschichte, seine eigenen Erfahrungen und seine eigenen Bedürfnisse mit.
-    </p>
+              <p>Ich arbeite ruhig, geduldig und individuell. Jedes Tier bringt seine eigene Geschichte, seine eigenen Erfahrungen und seine eigenen Bedürfnisse mit.</p>
 
-    <p>
-      Deshalb gibt es bei mir keine pauschalen Standardlösungen, sondern eine genaue Betrachtung der jeweiligen Situation und passende Schritte, die im Alltag wirklich umsetzbar sind.
-    </p>
+              <p>Deshalb gibt es bei mir keine pauschalen Standardlösungen, sondern eine genaue Betrachtung der jeweiligen Situation und passende Schritte, die im Alltag wirklich umsetzbar sind.</p>
 
-    <p class="service-note">
-      Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sicherer fühlt, Vertrauen aufbauen kann und Mensch und Tier wieder mehr Klarheit im gemeinsamen Alltag gewinnen.
-    </p>
-  </div>
-</div>
+              <p class="service-note">Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sicherer fühlt, Vertrauen aufbauen kann und Mensch und Tier wieder mehr Klarheit im gemeinsamen Alltag gewinnen.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1112,7 +997,7 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
       <div>
         <p><strong>Tierpsychologie</strong></p>
         <p>Pia Bortels</p>
-        <p>Alte Stöcken Str. 94</p>
+        <p>Alte Stöckener Str. 94</p>
         <p>30149 Hannover</p>
         <p>E-Mail: info@tierpsychologie-seelenbund.de</p>
         <p>Telefon: 0176 87925330</p>
@@ -1177,7 +1062,6 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
     });
   </script>
 
-
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const siteNav = document.querySelector(".site-nav");
@@ -1213,6 +1097,6 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
     })();
   </script>
   <!--End of Tawk.to Script-->
-<script src="files/responsive.js"></script>
+  <script src="files/responsive.js"></script>
 </body>
 </html>
