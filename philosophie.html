@@ -505,6 +505,23 @@
 .hero-visual:hover .image-label-hover {
   opacity: 1;
 }
+.hero-visual.mobile-alt::before {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+.hero-visual.mobile-alt::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-visual.mobile-alt .image-label {
+  opacity: 0;
+}
+
+.hero-visual.mobile-alt .image-label-hover {
+  opacity: 1;
+}
 
     footer {
       position: fixed;
@@ -852,7 +869,7 @@
   </style>
   <link rel="stylesheet" href="files/responsive.css">
 </head>
-<body>
+<body class="philosophie-page">
   <header>
     <div class="container nav">
       <a class="brand" href="home.html" aria-label="Zurück zur Startseite">
