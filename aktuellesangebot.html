@@ -392,6 +392,18 @@
       white-space: nowrap;
       border: 1px solid rgba(77, 64, 56, 0.06);
     }
+    .badge-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-self: end;
+  gap: 0.4rem;
+}
+
+.badge-stack .price-badge {
+  box-sizing: border-box;
+  width: 100%;
+}
 
     .service-block p {
       font-size: 0.9rem;
@@ -774,8 +786,10 @@
             <div class="service-block">
               <div class="service-head">
                 <h2>Vor- und Nachkontrollen bei Tiervermittlungen</h2>
-                <span class="price-badge">Preise auf Anfrage</span>
-                <span class="price-badge">bis 100 km</span>
+                <div class="badge-stack">
+  <span class="price-badge">Preise auf Anfrage</span>
+  <span class="price-badge">bis 100 km</span>
+</div>
               </div>
               <p>Eine verantwortungsvolle Tiervermittlung endet nicht mit der Übergabe des Tieres. Damit Tier und zukünftiges Zuhause möglichst gut zusammenpassen, biete ich <strong>Vor- und Nachkontrollen im Rahmen von Tiervermittlungen</strong> an.</p>
               <p>Mein Angebot richtet sich insbesondere an <strong>Tierschutzvereine, Tierschutzorganisationen und private Personen</strong>, die Hunde, Katzen oder Kleintiere verantwortungsvoll vermitteln.</p>
