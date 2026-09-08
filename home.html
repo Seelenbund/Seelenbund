@@ -498,9 +498,11 @@ main {
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(52, 39, 30, 0.34);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255, 244, 234, 0.18), transparent 34%),
+        rgba(68, 51, 42, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -534,6 +536,141 @@ main {
       margin-bottom: 1rem;
     }
 
+    .home-notice {
+      margin-bottom: 1.35rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(191, 126, 88, 0.16);
+      border-left: 3px solid rgba(183, 92, 92, 0.72);
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255, 247, 242, 0.92), rgba(255, 251, 248, 0.72));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+      font-weight: 600;
+      font-size: 0.84rem;
+      line-height: 1.48;
+    }
+
+    .home-notice p + p {
+      margin-top: 0.45rem;
+    }
+
+    .home-notice-title {
+      color: #a95757;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .home-notice-link {
+      color: #9e4949;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: rgba(158, 73, 73, 0.5);
+      text-underline-offset: 2px;
+    }
+
+    .home-notice-link:hover,
+    .home-notice-link:focus-visible {
+      color: #7e3838;
+    }
+
+    .notice-overlay-box {
+      width: min(100%, 590px);
+      max-height: calc(100vh - 2rem);
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 2.15rem 2.35rem 2.25rem;
+      color: #aa5454;
+      text-align: center;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(215, 234, 223, 0.42), transparent 32%),
+        radial-gradient(circle at 0% 100%, rgba(216, 157, 125, 0.14), transparent 38%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 243, 0.94));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow:
+        0 26px 70px rgba(99, 74, 58, 0.2),
+        0 4px 18px rgba(255, 255, 255, 0.5) inset;
+      transform: translateY(10px) scale(0.98);
+      transition: transform 0.28s ease;
+    }
+
+    .overlay.active .notice-overlay-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .notice-overlay-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 12%;
+      left: 12%;
+      height: 3px;
+      border-radius: 0 0 999px 999px;
+      background: linear-gradient(90deg, transparent, #d89d7d, #d7eadf, transparent);
+    }
+
+    .notice-overlay-box > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .notice-overlay-box h2 {
+      margin-bottom: 0.85rem;
+      color: #a95757;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.025em;
+    }
+
+    .notice-overlay-box p {
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .notice-overlay-box p + p {
+      margin-top: 0.8rem;
+    }
+
+    .notice-overlay-box a {
+      display: inline-block;
+      margin: 0 0.12rem;
+      padding: 0.02rem 0.28rem;
+      border-radius: 6px;
+      color: #9e4949;
+      font-weight: 700;
+      text-decoration-color: rgba(158, 73, 73, 0.55);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      background: rgba(216, 157, 125, 0.1);
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .notice-overlay-box a:hover,
+    .notice-overlay-box a:focus-visible {
+      color: #7e3838;
+      background: rgba(216, 157, 125, 0.2);
+    }
+
+    .notice-overlay-box .overlay-close {
+      top: 0.75rem;
+      right: 0.8rem;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(191, 126, 88, 0.14);
+      border-radius: 50%;
+      color: #8f7568;
+      font-size: 1.45rem;
+      background: rgba(255, 255, 255, 0.58);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .notice-overlay-box .overlay-close:hover,
+    .notice-overlay-box .overlay-close:focus-visible {
+      color: #765e52;
+      background: rgba(255, 244, 234, 0.95);
+      transform: rotate(4deg) scale(1.04);
+    }
+
     .hours-layout {
       display: grid;
       grid-template-columns: 1.4fr 0.9fr;
@@ -548,11 +685,12 @@ main {
 
     .hours-row {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 150px 1fr;
       gap: 0.7rem;
       align-items: start;
       color: #4d4038;
-      line-height: 1.35;
+      font-size: 0.82rem;
+      line-height: 1.3;
     }
 
     .hours-day {
@@ -565,6 +703,10 @@ main {
 
     .hours-note strong {
       font-weight: 600;
+    }
+
+    .hours-note {
+      font-size: 0.8rem;
     }
 
     .overlay-close {
@@ -767,6 +909,19 @@ main {
         grid-template-columns: 1fr;
         gap: 0.2rem;
       }
+
+      .notice-overlay-box {
+        padding: 2rem 1.25rem 1.55rem;
+        border-radius: 20px;
+      }
+
+      .notice-overlay-box h2 {
+        padding: 0 2rem;
+      }
+
+      .notice-overlay-box p {
+        line-height: 1.6;
+      }
     }
 
     @media (max-width: 480px) {
@@ -803,6 +958,7 @@ main {
     }
   </style>
   <link rel="stylesheet" href="files/responsive.css">
+  <link rel="stylesheet" href="files/privacy.css">
 </head>
 <body>
   <header>
@@ -822,6 +978,7 @@ main {
           <li><a class="active" href="home.html">Home</a></li>
           <li><a href="philosophie.html">Philosophie</a></li>
           <li><a href="qualifikationen.html">Qualifikationen</a></li>
+          <li><a href="aktuellesangebot.html">Aktuelles Angebot</a></li>
           <li><a href="leistungenundpreise.html">Leistungen & Preise</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
@@ -833,6 +990,13 @@ main {
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-card">
+          <div class="home-notice" aria-label="Aktueller Hinweis">
+            <p class="home-notice-title"><strong>Aktueller Hinweis</strong></p>
+            <p><strong>Bitte beachten Sie, dass ich derzeit kein Hundetraining und keine Verhaltensberatung anbiete.</strong></p>
+            <p><strong>Mein Angebot konzentriert sich aktuell auf die liebevolle Betreuung von Hunden, Katzen und Kleintieren in ihrem gewohnten Zuhause sowie auf meine weiteren Beratungsangebote rund um die Tierhaltung. Bitte schauen sie unter dem Menüpunkt <a class="home-notice-link" href="aktuellesangebot.html">Aktuelles Angebot</a>.</strong></p>
+            <p><strong>Vielen Dank für Ihr Verständnis.</strong></p>
+          </div>
+
           <h1>Ziel ist nicht, dass dein Hund einfach „funktioniert“, sondern, dass er sich bei dir wirklich sicher fühlt.</h1>
 
 <div class="intro-text">
@@ -860,6 +1024,16 @@ main {
     </section>
   </main>
 
+  <div class="overlay" id="notice-overlay" role="dialog" aria-modal="true" aria-labelledby="notice-title">
+    <div class="overlay-box notice-overlay-box">
+      <button class="overlay-close" id="close-notice" aria-label="Hinweis schließen">×</button>
+      <h2 id="notice-title">Aktueller Hinweis</h2>
+      <p><strong>Bitte beachten Sie, dass ich derzeit kein Hundetraining und keine Verhaltensberatung anbiete.</strong></p>
+      <p><strong>Bitte schauen sie unter dem Menüpunkt <a href="aktuellesangebot.html">Aktuelles Angebot</a>.</strong></p>
+      <p><strong>Vielen Dank für Ihr Verständnis.</strong></p>
+    </div>
+  </div>
+
   <div class="overlay" id="hours-overlay">
     <div class="overlay-box">
       <button class="overlay-close" id="close-hours" aria-label="Overlay schließen">×</button>
@@ -868,32 +1042,16 @@ main {
       <div class="hours-layout">
         <div class="hours-list">
           <div class="hours-row">
-            <span class="hours-day">Montag:</span>
-            <span class="hours-time">10:00 – 18:00 Uhr</span>
-          </div>
-          <div class="hours-row">
-            <span class="hours-day">Dienstag:</span>
-            <span class="hours-time">10:00 – 18:00 Uhr</span>
-          </div>
-          <div class="hours-row">
-            <span class="hours-day">Mittwoch:</span>
-            <span class="hours-time">09:00 – 14:00 Uhr</span>
+            <span class="hours-day">Montag bis Mittwoch:</span>
+            <span class="hours-time">09:30 – 13:00 Uhr<br>14:30 – 19:00 Uhr</span>
           </div>
           <div class="hours-row">
             <span class="hours-day">Donnerstag:</span>
-            <span class="hours-time">10:00 – 18:00 Uhr</span>
+            <span class="hours-time">14:00 – 19:00 Uhr</span>
           </div>
           <div class="hours-row">
             <span class="hours-day">Freitag:</span>
-            <span class="hours-time">10:00 – 14:00 Uhr</span>
-          </div>
-          <div class="hours-row">
-            <span class="hours-day">Samstag:</span>
-            <span class="hours-time">nach Vereinbarung</span>
-          </div>
-          <div class="hours-row">
-            <span class="hours-day">Sonntag:</span>
-            <span class="hours-time">nach Vereinbarung</span>
+            <span class="hours-time">09:00 – 13:00 Uhr</span>
           </div>
         </div>
 
@@ -922,7 +1080,7 @@ main {
   <footer>
     <div class="container footer-inner">
       <div>© 2026 Tierpsychologie Seelenbund</div>
-      <a href="#" id="open-impressum">Impressum</a>
+      <a href="impressum.html">Impressum &amp; Datenschutz</a>
     </div>
   </footer>
 
@@ -938,6 +1096,22 @@ main {
       const openImpressumBtn = document.getElementById("open-impressum");
       const closeImpressumBtn = document.getElementById("close-impressum");
       const impressumOverlay = document.getElementById("impressum-overlay");
+
+      const noticeOverlay = document.getElementById("notice-overlay");
+      const closeNoticeBtn = document.getElementById("close-notice");
+      if (noticeOverlay && closeNoticeBtn) {
+        noticeOverlay.classList.add("active");
+
+        closeNoticeBtn.addEventListener("click", function () {
+          noticeOverlay.classList.remove("active");
+        });
+
+        noticeOverlay.addEventListener("click", function (e) {
+          if (e.target === noticeOverlay) {
+            noticeOverlay.classList.remove("active");
+          }
+        });
+      }
 
       if (openBtn && closeBtn && overlay) {
         openBtn.addEventListener("click", function (e) {
@@ -973,6 +1147,14 @@ main {
         });
       }
 
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          document.querySelectorAll(".overlay.active").forEach(activeOverlay => {
+            activeOverlay.classList.remove("active");
+          });
+        }
+      });
+
       document.querySelectorAll('a[href]').forEach(link => {
         const href = link.getAttribute('href');
 
@@ -997,21 +1179,6 @@ main {
         }
       });
     </script>
-
-  <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    Tawk_API.onLoad=function(){ Tawk_API.minimize(); };
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/69e0c8c03f5fe21c385b068f/1jmb10c0j';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
 <script src="files/responsive.js"></script>
 </body>
 </html>

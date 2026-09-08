@@ -454,6 +454,48 @@
       color: var(--text-soft);
     }
 
+    .qualification-highlight {
+      background: rgba(216, 190, 165, 0.20);
+    }
+
+    .qualification-highlight .service-head h2 {
+      color: #a97f60;
+    }
+
+    .reference-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      padding: 0.15rem;
+      border-radius: 14px;
+    }
+
+    .reference-link h2 {
+      margin: 0;
+      color: #a97f60;
+      font-size: clamp(1rem, 1.45vw, 1.3rem);
+    }
+
+    .reference-action {
+      flex-shrink: 0;
+      padding: 0.38rem 0.75rem;
+      border: 1px solid rgba(77, 64, 56, 0.06);
+      border-radius: 999px;
+      color: #a97f60;
+      background: rgba(216, 190, 165, 0.34);
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .reference-link:hover .reference-action,
+    .reference-link:focus-visible .reference-action {
+      background: rgba(216, 190, 165, 0.52);
+      transform: translateY(-1px);
+    }
+
     .logo-block {
       display: grid;
       grid-template-columns: 1fr 170px;
@@ -755,6 +797,7 @@
 }
   </style>
   <link rel="stylesheet" href="files/responsive.css">
+  <link rel="stylesheet" href="files/privacy.css">
 </head>
 <body class="qualifikationen-page">
   <header>
@@ -774,6 +817,7 @@
           <li><a href="home.html">Home</a></li>
           <li><a href="philosophie.html">Philosophie</a></li>
           <li><a class="active" href="qualifikationen.html">Qualifikationen</a></li>
+          <li><a href="aktuellesangebot.html">Aktuelles Angebot</a></li>
           <li><a href="leistungenundpreise.html">Leistungen & Preise</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
@@ -803,21 +847,26 @@
                     width="302"
                     height="302"
                     decoding="async"
-                    src="https://atn-akademie.com/wp-content/uploads/2022/05/atn-absolvent-tierpsychologie-ausbildung-atn-akademie_v1.png"
+                    src="files/atn-absolvent-tierpsychologie.png"
                     title="ATN Tierpsychologie Absolvent - Tierpsychologie Ausbildung"
                     alt="ATN Tierpsychologie Absolvent - Tierpsychologie Ausbildung"
                   />
                 </a>
 
                 <div>
-                  <p>Studium der Tierpsychologie an der renommierten ATN Schweiz
-Ich arbeite ruhig, geduldig und individuell. Jedes Tier bringt seine eigene Geschichte, seine eigenen Erfahrungen und seine eigenen Bedürfnisse mit.
-
-Deshalb gibt es bei mir keine pauschalen Standardlösungen, sondern eine genaue Betrachtung der jeweiligen Situation und passende Schritte, die im Alltag wirklich umsetzbar sind.
-
-Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sicherer fühlt, Vertrauen aufbauen kann und Mensch und Tier wieder mehr Klarheit im gemeinsamen Alltag gewinnen.</p>
+                  <p>Studium der Tierpsychologie an der renommierten ATN (Akademie für angewandte Tierpsychologie und Tierverhaltenstraining) in der Schweiz erfolgreich abgeschlossen.</p>
+                  <p>In meiner Arbeit verbinde ich mein erlerntes Fachwissen mit einem ruhigen, geduldigen und einfühlsamen Umgang. Für mich ist kein Tier einfach „nur ein Tier“ – jedes hat seinen eigenen Charakter, seine eigene Geschichte und ganz individuelle Bedürfnisse.</p>
+                  <p>Genau deshalb ist mir eine persönliche und individuelle Betreuung besonders wichtig. Ich nehme mir die Zeit, ein Tier kennenzulernen, seine Signale wahrzunehmen und mich auf seine Persönlichkeit einzustellen.</p>
+                  <p>Da sich die Erkenntnisse rund um Tierverhalten und artgerechte Haltung stetig weiterentwickeln, bilde ich mich regelmäßig weiter und erweitere kontinuierlich mein Fachwissen. So möchte ich sicherstellen, dass meine Arbeit stets auf einem aktuellen und fundierten Wissensstand basiert.</p>
                 </div>
               </div>
+            </div>
+
+            <div class="service-block">
+              <a class="reference-link" href="files/ehrenamtliche_referenzen.pdf" target="_blank" rel="noopener">
+                <h2>Ehrenamtlich</h2>
+                <span class="reference-action">PDF ansehen</span>
+              </a>
             </div>
 
             <div class="service-block">
@@ -830,6 +879,42 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
                   <div>2026</div>
                   <div>Thema</div>
                   <div>Dozent/in</div>
+                </div>
+
+                <div class="training-row">
+                  <div class="training-year">August</div>
+                  <div class="training-topic">Wissen allein reicht nicht: Sprache &amp; Fragetechnik kundenwirksam einsezen</div>
+                  <div class="training-teacher">Isabel Kirsch</div>
+                </div>
+
+                <div class="training-row">
+                  <div class="training-year">August</div>
+                  <div class="training-topic">Kognitive Dysfunktion beim Hund: Früherkennung u. Management</div>
+                  <div class="training-teacher">Maria Hense</div>
+                </div>
+
+                <div class="training-row">
+                  <div class="training-year">Juli</div>
+                  <div class="training-topic">Training von Alltagsfähigkeiten u. Trigger (Hund)</div>
+                  <div class="training-teacher">Maria Hense</div>
+                </div>
+
+                <div class="training-row">
+                  <div class="training-year">Juni</div>
+                  <div class="training-topic">Beratung vor dem Hundekauf</div>
+                  <div class="training-teacher">Jennifer Skandarajah</div>
+                </div>
+
+                <div class="training-row">
+                  <div class="training-year">Juni</div>
+                  <div class="training-topic">Stabilisieren und fördern bei Traumata (Hund)</div>
+                  <div class="training-teacher">Maria Hense</div>
+                </div>
+
+                <div class="training-row">
+                  <div class="training-year">April</div>
+                  <div class="training-topic">Neues aus der Wissenschaft (Wölfe)</div>
+                  <div class="training-teacher">Dr. Sven Wieskotten</div>
                 </div>
 
                 <div class="training-row">
@@ -958,7 +1043,7 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
               </div>
             </div>
 
-            <div class="service-block">
+            <div class="service-block qualification-highlight">
               <div class="service-head">
                 <h2>Schwerpunkte meiner Arbeit</h2>
               </div>
@@ -973,16 +1058,18 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
               </ul>
             </div>
 
-            <div class="service-block">
+            <div class="service-block qualification-highlight">
               <div class="service-head">
                 <h2>Meine Arbeitsweise</h2>
               </div>
 
-              <p>Ich arbeite ruhig, geduldig und individuell. Jedes Tier bringt seine eigene Geschichte, seine eigenen Erfahrungen und seine eigenen Bedürfnisse mit.</p>
+              <p>Bei meiner Arbeit steht das Wohlbefinden des Tieres für mich an erster Stelle. Ich arbeite <strong>ruhig, geduldig, individuell und ganzheitlich</strong> und versuche, jedes Tier in seiner gesamten Lebenssituation zu betrachten.</p>
 
-              <p>Deshalb gibt es bei mir keine pauschalen Standardlösungen, sondern eine genaue Betrachtung der jeweiligen Situation und passende Schritte, die im Alltag wirklich umsetzbar sind.</p>
+              <p>Dabei arbeite ich <strong>ausschließlich mit fairen, gewaltfreien und bedürfnisorientierten Methoden</strong>. Auf aversive Methoden, Einschüchterung, körperliche Strafe oder andere Maßnahmen, die dem Tier Angst, Schmerzen oder unnötigen Stress zufügen können, verzichte ich grundsätzlich.</p>
 
-              <p class="service-note">Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sicherer fühlt, Vertrauen aufbauen kann und Mensch und Tier wieder mehr Klarheit im gemeinsamen Alltag gewinnen.</p>
+              <p>Für mich bedeutet ganzheitliches Arbeiten auch, nicht nur das sichtbare Verhalten eines Tieres zu betrachten, sondern mögliche Einflussfaktoren wie Haltung, Alltag, Umfeld, Bedürfnisse und Wohlbefinden mit einzubeziehen.</p>
+
+              <p>Manchmal kann es sinnvoll sein bei entsprechenden Fragestellungen eine <strong>verhaltenmedizinisch tätige TierärztInnen</strong> hinzuzueziehen.</p>
             </div>
           </div>
         </div>
@@ -1008,7 +1095,7 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
   <footer>
     <div class="container footer-inner">
       <div>© 2026 Tierpsychologie Seelenbund</div>
-      <a href="#" id="open-impressum">Impressum</a>
+      <a href="impressum.html">Impressum &amp; Datenschutz</a>
     </div>
   </footer>
 
@@ -1061,21 +1148,6 @@ Ziel ist nicht, dass ein Tier einfach funktioniert, sondern dass es sich sichere
       }
     });
   </script>
-
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    Tawk_API.onLoad=function(){ Tawk_API.minimize(); };
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/69e0c8c03f5fe21c385b068f/1jmb10c0j';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
   <script src="files/responsive.js"></script>
 </body>
 </html>

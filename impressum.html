@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tierpsychologie | Philosophie</title>
+  <title>Tierpsychologie | Impressum &amp; Datenschutz</title>
   <style>
     :root {
       --bg: #fffaf6;
@@ -121,11 +121,6 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
@@ -148,11 +143,7 @@
         radial-gradient(circle at 46% 28%, rgba(230, 220, 245, 0.18) 0 40px, transparent 70px),
         radial-gradient(circle at 68% 68%, rgba(220, 236, 255, 0.16) 0 44px, transparent 76px),
         radial-gradient(circle at 86% 34%, rgba(236, 226, 255, 0.16) 0 38px, transparent 68px),
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.80),
-          rgba(255, 248, 244, 0.72)
-        );
+        linear-gradient(135deg, rgba(255, 255, 255, 0.80), rgba(255, 248, 244, 0.72));
       border-bottom: 1px solid rgba(255, 255, 255, 0.52);
       box-shadow: 0 10px 30px rgba(191, 126, 88, 0.08);
       overflow: visible;
@@ -305,16 +296,12 @@
       padding: 2.2rem 0 1.4rem;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 420px 460px;
-      gap: 3rem;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-card,
-    .image-card {
+    .service-card {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: 1.55rem 1.9rem;
+  max-height: 620px;
+      overflow: hidden;
       background: linear-gradient(
         180deg,
         rgba(255,255,255,0.90),
@@ -328,200 +315,164 @@
       backdrop-filter: blur(10px);
     }
 
-    .hero-card {
-  padding: 1.45rem 1.55rem;
-  max-width: 460px;
-  margin-top: 1rem;
-  max-height: 520px;
-  overflow: hidden;
-}
+    .service-scroll {
+      max-height: 560px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 1rem;
+      padding-bottom: 3.5rem;
+      scrollbar-gutter: stable;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(77, 64, 56, 0.10) transparent;
+    }
 
-.intro-text {
-  max-width: 62ch;
-  max-height: 460px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 1rem;
-  padding-bottom: 3.5rem;
-  scrollbar-gutter: stable;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(77, 64, 56, 0.10) transparent;
-}
+    .service-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
 
-.intro-text::-webkit-scrollbar {
-  width: 6px;
-}
+    .service-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
 
-.intro-text::-webkit-scrollbar-track {
-  background: transparent;
-}
+    .service-scroll::-webkit-scrollbar-thumb {
+      background: rgba(77, 64, 56, 0.10);
+      border-radius: 999px;
+    }
 
-.intro-text::-webkit-scrollbar-thumb {
-  background: rgba(77, 64, 56, 0.10);
-  border-radius: 999px;
-}
-
-.intro-text::-webkit-scrollbar-thumb:hover {
-  background: rgba(77, 64, 56, 0.16);
-}
-
-.hero-card::-webkit-scrollbar {
-  width: 8px;
-}
-
-.hero-card::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.hero-card::-webkit-scrollbar-thumb {
-  background: rgba(77, 64, 56, 0.08);
-  border-radius: 999px;
-}
-
-.hero-card::-webkit-scrollbar-thumb:hover {
-  background: rgba(77, 64, 56, 0.22);
-}
-
-    .image-card {
-  padding: 0.7rem;
-  overflow: hidden;
-  width: 390px;
-  align-self: start;
-}
+    .service-scroll::-webkit-scrollbar-thumb:hover {
+      background: rgba(77, 64, 56, 0.16);
+    }
 
     h1, h2, h3 {
       line-height: 1.18;
     }
 
     h1 {
-      font-size: clamp(1.2rem, 1.55vw, 1.7rem);
-      margin-bottom: 1.5rem;
-    }
+  font-size: clamp(1.25rem, 1.7vw, 1.9rem);
+  margin-bottom: 2.2rem;
+  text-align: center;
+}
 
-    h2 {
-      font-size: clamp(1.5rem, 2.3vw, 2.1rem);
+    .service-block {
+      padding: 1.1rem 1.15rem;
       margin-bottom: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.46);
+      border: 1px solid rgba(255,255,255,0.52);
+      box-shadow:
+        0 8px 22px rgba(99, 74, 58, 0.06),
+        inset 0 1px 8px rgba(255,255,255,0.22);
     }
 
-    .intro-text p {
-      margin-bottom: 0.9rem;
+    .service-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+    .service-head h2 {
+      font-size: clamp(1rem, 1.45vw, 1.3rem);
       color: var(--text);
-      line-height: 1.65;
-      font-size: 0.9rem;
+      margin: 0;
     }
 
-    .hero-visual {
-  position: relative;
-  border-radius: 18px;
-  aspect-ratio: 4 / 6.5;
-  width: 100%;
-  overflow: hidden;
-  display: block;
-  box-shadow:
-    inset 0 0 18px rgba(255,255,255,0.18),
-    0 16px 30px rgba(99,74,58,0.10);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+    .price-badge {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(216, 190, 165, 0.34);
+      color: #a97f60;
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      border: 1px solid rgba(77, 64, 56, 0.06);
+    }
+
+    .service-block p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-block ul {
+      margin-left: 1.1rem;
+      margin-top: 0.45rem;
+      margin-bottom: 0.85rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .service-block li {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .service-note {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  max-width: 760px;
 }
 
-.hero-visual::before,
-.hero-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition:
-    opacity 0.55s ease,
-    transform 0.55s ease,
-    filter 0.55s ease;
-}
+    .discount-block {
+      background: linear-gradient(135deg, rgba(255, 247, 242, 0.78), rgba(215, 234, 223, 0.4));
+      border-color: rgba(216, 157, 125, 0.18);
+    }
 
-.hero-visual::before {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.10)),
-    url('files/FotoHundPia.jpg');
-  opacity: 1;
-  z-index: 1;
-  filter: saturate(1) brightness(1) contrast(1);
-}
+    .offer-subsection {
+      margin-top: 1.2rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid rgba(77, 64, 56, 0.1);
+    }
 
-.hero-visual::after {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.10)),
-    url('files/pia2026.jpg');
-  opacity: 0;
-  z-index: 2;
-  filter: saturate(1.08) brightness(1.03) contrast(1.04);
-  transform: scale(1.02);
-}
+    .offer-subsection h3 {
+      margin-bottom: 0.8rem;
+      color: var(--text);
+      font-size: clamp(0.98rem, 1.35vw, 1.2rem);
+    }
 
-.hero-visual:hover {
-  transform: scale(1.015);
-  box-shadow:
-    inset 0 0 18px rgba(255,255,255,0.22),
-    0 20px 36px rgba(99,74,58,0.14);
-}
+    .legal-section h3 {
+      margin: 1.35rem 0 0.55rem;
+      color: #a97f60;
+      font-size: clamp(0.98rem, 1.35vw, 1.18rem);
+    }
 
-.hero-visual:hover::before {
-  opacity: 0;
-  transform: scale(1.03);
-}
+    .legal-section .service-head + h3 {
+      margin-top: 0.2rem;
+    }
 
-.hero-visual:hover::after {
-  opacity: 1;
-  transform: scale(1);
-}
+    .legal-section a {
+      color: #a97f60;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
 
-.hero-visual .image-label {
-  position: absolute;
-  left: 14px;
-  bottom: 12px;
-  z-index: 3;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.96);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-  transition: opacity 0.35s ease;
-}
+    .privacy-settings-button {
+      margin: 0.25rem 0 0.4rem;
+      padding: 0.65rem 1rem;
+      border: 1px solid rgba(77, 64, 56, 0.08);
+      border-radius: 999px;
+      color: white;
+      background: #d7b89a;
+      font: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
 
-.hero-visual .image-label-hover {
-  position: absolute;
-  left: 14px;
-  bottom: 12px;
-  z-index: 4;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.96);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.hero-visual:hover .image-label {
-  opacity: 0;
-}
-
-.hero-visual:hover .image-label-hover {
-  opacity: 1;
-}
-.hero-visual.mobile-alt::before {
-  opacity: 0;
-  transform: scale(1.03);
-}
-
-.hero-visual.mobile-alt::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.hero-visual.mobile-alt .image-label {
-  opacity: 0;
-}
-
-.hero-visual.mobile-alt .image-label-hover {
-  opacity: 1;
-}
+    .privacy-settings-button:hover,
+    .privacy-settings-button:focus-visible {
+      background: #caa786;
+      transform: translateY(-1px);
+    }
 
     footer {
       position: fixed;
@@ -603,44 +554,6 @@
       margin-bottom: 1rem;
     }
 
-    .hours-layout {
-      display: grid;
-      grid-template-columns: 1.4fr 0.9fr;
-      gap: 1.5rem;
-      align-items: start;
-    }
-
-    .hours-list {
-      display: grid;
-      gap: 0.35rem;
-    }
-
-    .hours-row {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 0.7rem;
-      align-items: start;
-      color: #4d4038;
-      font-size: 0.82rem;
-      line-height: 1.3;
-    }
-
-    .hours-day {
-      font-weight: 700;
-    }
-
-    .hours-time {
-      text-align: left;
-    }
-
-    .hours-note strong {
-      font-weight: 600;
-    }
-
-    .hours-note {
-      font-size: 0.8rem;
-    }
-
     .overlay-close {
       position: absolute;
       top: 0.7rem;
@@ -656,24 +569,6 @@
     @keyframes pulseLogo {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.03); }
-    }
-
-    @keyframes magicBokehOne {
-      0% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      100% {
-        transform: translate3d(-40px, -26px, 0) scale(1.12);
-      }
-    }
-
-    @keyframes magicBokehTwo {
-      0% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      100% {
-        transform: translate3d(30px, 22px, 0) scale(1.14);
-      }
     }
 
     @keyframes headerShimmer {
@@ -767,20 +662,16 @@
     }
 
     @media (max-width: 980px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 2.6rem;
-      }
-
-      .hero-visual {
-        aspect-ratio: 4 / 4.9;
-      }
-
       .brand-logo {
         width: 210px;
+      }
+
+      .service-card {
+        max-height: none;
+      }
+
+      .service-scroll {
+        max-height: none;
       }
     }
 
@@ -819,23 +710,17 @@
         font-size: 0.96rem;
       }
 
-      .hero-card {
+      .hero {
+        padding-top: 2.4rem;
+      }
+
+      .service-card {
         padding: 1.25rem;
       }
 
-      .hero-grid {
-        gap: 1.8rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hours-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hours-row {
-        grid-template-columns: 1fr;
-        gap: 0.2rem;
+      .service-head {
+        flex-direction: column;
+        gap: 0.55rem;
       }
     }
 
@@ -850,10 +735,6 @@
 
       .hero {
         padding-top: 2rem;
-      }
-
-      .hero-visual {
-        aspect-ratio: 4 / 4.9;
       }
 
       h1 {
@@ -875,7 +756,7 @@
   <link rel="stylesheet" href="files/responsive.css">
   <link rel="stylesheet" href="files/privacy.css">
 </head>
-<body class="philosophie-page">
+<body>
   <header>
     <div class="container nav">
       <a class="brand" href="home.html" aria-label="Zurück zur Startseite">
@@ -891,7 +772,7 @@
       <nav class="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="home.html">Home</a></li>
-          <li><a class="active" href="philosophie.html">Philosophie</a></li>
+          <li><a href="philosophie.html">Philosophie</a></li>
           <li><a href="qualifikationen.html">Qualifikationen</a></li>
           <li><a href="aktuellesangebot.html">Aktuelles Angebot</a></li>
           <li><a href="leistungenundpreise.html">Leistungen & Preise</a></li>
@@ -903,68 +784,110 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="image-card">
-          <div class="hero-visual">
-  <span class="image-label">Pia 1993</span>
-  <span class="image-label-hover">Pia 2026</span>
-</div>
-        </div>
+      <div class="container">
+        <div class="service-card">
+          <h1>Impressum &amp; Datenschutz</h1>
 
-        <div class="hero-card">
-          <h1>Ein wenig über mich...</h1>
+          <div class="service-scroll legal-scroll">
+            <div class="service-block legal-section">
+              <div class="service-head">
+                <h2>Impressum</h2>
+              </div>
 
-          <div class="intro-text">
-  <p>Schon seit meiner Kindheit fühle ich mich eng mit Tieren verbunden und habe meine Zeit gerne mit ihnen verbracht. Früh habe ich gelernt, Verantwortung zu übernehmen und achtsam mit unseren Haustieren sowie auch mit Wildtieren umzugehen. Tiere gaben mir immer das Gefühl, willkommen zu sein und bedingungslos geliebt zu werden.</p>
+              <h3>Angaben gemäß § 5 DDG</h3>
+              <p><strong>Tierpsychologie Seelenbund</strong><br>
+                Pia Bortels<br>
+                Alte Stöckener Str. 94<br>
+                30149 Hannover</p>
 
-  <p>Mir war immer klar, wenn auch oft im Verborgenen, dass ich etwas mit Tieren machen möchte.</p>
+              <p><strong>Kontakt</strong><br>
+                Telefon: <a href="tel:+4917687925330">0176 87925330</a><br>
+                E-Mail: <a href="mailto:info@tierpsychologie-seelenbund.de">info@tierpsychologie-seelenbund.de</a></p>
 
-  <p>Der Beruf der Tierpsychologin kam mir sehr entgegen. Mein Anliegen ist es, eine Verbindung zwischen Mensch und Tier zu schaffen, denn ich bin überzeugt davon, dass das Zusammenleben von Mensch und Tier besonders harmonisch sein kann, wenn wir bereit sind, genauer hinzuschauen und einander wirklich zu verstehen. Auch der Blick auf das eigene Verhalten spielt dabei eine wichtige Rolle.</p>
+              <h3>Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV</h3>
+              <p>Pia Bortels<br>
+                Alte Stöckener Str. 94<br>
+                30149 Hannover</p>
 
-  <p>Manchmal hilft es, eine neutrale Perspektive von außen zu bekommen, um Veränderungen im Verhalten besser einordnen zu können. Genau hier möchte ich Sie unterstützen. Gemeinsam gehen wir den möglichen Ursachen auf den Grund und finden Wege, die zu Ihnen und Ihrem Tier passen.</p>
+              <h3>Absichtserklärung:</h3>
+              <p>Unsere Internetseiten enthalten nur seriöse und von ausgewiesenen Fachleuten geprüfte Informationen. Unser Angebot wird ständig aktualisiert und ist frei vom Einfluss irgendwelcher Sponsoren. Die Navigation in unserem Angebot ist so gestaltet, dass die gewünschten Informationen schnell und mühelos aufgefunden werden können.</p>
 
-  <p>Ich lade Sie herzlich ein, sich nicht erst in akuten Krisensituationen an mich zu wenden, sondern auch dann, wenn Sie erste kleine Veränderungen im Verhalten Ihres Tieres bemerken. Tiere zeigen oft früh leise Signale, die leicht übersehen werden können. Je früher wir hinschauen, desto schneller können wir Situationen abfangen, die später vielleicht zu Problemen führen.</p>
+              <h3>Haftungshinweis:</h3>
+              <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
 
-  <p>Meine Arbeit basiert auf einem respektvollen, gewaltfreien Umgang und orientiert sich an aktuellen wissenschaftlichen Erkenntnissen. Ich arbeite mit positiver Verstärkung, um eine vertrauensvolle und ruhige Beziehung zwischen Mensch und Tier zu fördern.</p>
-</div>
+              <h3>Verstoß gegen Schadensminderungspflicht bei kostenpflichtiger Abmahnung:</h3>
+              <p>Bei Einwendungen gegen Inhalte oder Darstellungen in dieser Website wegen Verletzung gesetzlicher Normen oder Eingriff in persönliche Rechte bitten wir um Kontaktaufnahme und einen begründeten Hinweis ohne Kostennote. Wir versichern dafür im Gegenzug, die zu Recht beanstandeten Inhalte oder Gestaltungen dieser Website unverzüglich zu entfernen bzw. abzuändern. Aufgrund dieser Garantie ist von Ihrer Seite die Einschaltung eines Rechtsbeistandes nicht erforderlich. Die Beauftragung eines Rechtsbeistands zu kostenpflichtigen Abmahnung ist damit gemäß § 12 I iVm. § 8 IV UWG rechtsmissbräuchlich, da in diesem Fall sachfremde Erwägungen (etwa Kostenerzielungsabsicht) unterstellt werden können. Damit läge von Ihrer Seite ein Verstoß gegen die Schadensminderungspflicht vor, so dass Sie die Kosten zu tragen hätten.</p>
+            </div>
+
+            <div class="service-block legal-section">
+              <div class="service-head">
+                <h2>Datenschutzerklärung</h2>
+              </div>
+              <p class="service-note">Stand: September 2026</p>
+
+              <h3>1. Verantwortliche Stelle</h3>
+              <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+              <p><strong>Pia Bortels – Tierpsychologie Seelenbund</strong><br>
+                Alte Stöckener Str. 94<br>
+                30149 Hannover<br>
+                Telefon: <a href="tel:+4917687925330">0176 87925330</a><br>
+                E-Mail: <a href="mailto:info@tierpsychologie-seelenbund.de">info@tierpsychologie-seelenbund.de</a></p>
+
+              <h3>2. Allgemeine Hinweise zur Datenverarbeitung</h3>
+              <p>Personenbezogene Daten sind alle Informationen, mit denen Sie persönlich identifiziert werden können. Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung dieser Website, zur Bearbeitung Ihrer Anfragen oder zur Durchführung vorvertraglicher bzw. vertraglicher Maßnahmen erforderlich ist oder Sie eingewilligt haben.</p>
+
+              <h3>3. Bereitstellung der Website und Server-Protokolldateien</h3>
+              <p>Beim Aufruf dieser Website können durch den Hostinganbieter technisch erforderliche Daten verarbeitet werden. Dazu können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Datei, Referrer-URL, Browsertyp, Betriebssystem und HTTP-Statuscode gehören.</p>
+              <p>Die Verarbeitung erfolgt zur sicheren und stabilen Bereitstellung der Website sowie zur Abwehr von Missbrauch auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt im sicheren und fehlerfreien Betrieb der Website. Protokolldaten werden nur so lange gespeichert, wie dies für diese Zwecke erforderlich ist; gesetzliche Aufbewahrungspflichten bleiben unberührt.</p>
+
+              <h3>4. Kontaktaufnahme per Telefon oder E-Mail</h3>
+              <p>Wenn Sie uns per Telefon oder E-Mail kontaktieren, verarbeiten wir Ihre Angaben einschließlich der von Ihnen mitgeteilten Kontaktdaten zur Bearbeitung Ihrer Anfrage und für mögliche Anschlussfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf den Abschluss oder die Durchführung eines Vertrags gerichtet ist, andernfalls Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in der sachgerechten Bearbeitung Ihrer Anfrage.</p>
+              <p>Die Daten werden gelöscht, wenn Ihre Anfrage abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten oder sonstigen berechtigten Gründe für eine weitere Speicherung bestehen.</p>
+
+              <h3>5. Kontaktformular und Formspree</h3>
+              <p>Für das Kontaktformular nutzen wir Formspree, einen Dienst der Formspree, Inc. Wenn Sie das Formular absenden, werden Ihre E-Mail-Adresse, Ihre Nachricht sowie technisch anfallende Verbindungsdaten an Formspree übermittelt und dort verarbeitet. Formspree verarbeitet Daten in den USA und nutzt nach eigenen Angaben geeignete Garantien für internationale Datenübermittlungen, darunter Standardvertragsklauseln.</p>
+              <p>Die Verarbeitung dient ausschließlich der Übermittlung und Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit es um vorvertragliche oder vertragliche Kommunikation geht, andernfalls Art. 6 Abs. 1 lit. f DSGVO. Die Bereitstellung der Daten ist freiwillig; ohne E-Mail-Adresse und Nachricht kann das Formular nicht genutzt werden.</p>
+              <p class="legal-links">Weitere Informationen: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise von Formspree</a>.</p>
+
+              <h3>6. Live-Chat mit tawk.to</h3>
+              <p>Auf dieser Website kann ein Live-Chat des Anbieters tawk.to genutzt werden. Der Chat wird erst geladen, nachdem Sie ausdrücklich zugestimmt haben. Dabei können insbesondere IP-Adresse, Geräte- und Browserinformationen, Nutzungsdaten sowie die von Ihnen im Chat eingegebenen Inhalte verarbeitet werden. tawk.to verarbeitet Daten in den USA und verweist für internationale Übermittlungen unter anderem auf das EU-U.S. Data Privacy Framework und vertragliche Schutzmechanismen.</p>
+              <p>Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO und, soweit Informationen auf Ihrem Endgerät gespeichert oder ausgelesen werden, § 25 Abs. 1 TDDDG. Die Einwilligung ist freiwillig und kann jederzeit mit Wirkung für die Zukunft widerrufen werden.</p>
+              <p class="legal-links">Weitere Informationen: <a href="https://www.tawk.to/privacy-policy/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise von tawk.to</a>.</p>
+              <button class="privacy-settings-button" type="button" data-chat-consent-manage>Chat-Einstellungen verwalten</button>
+              <span class="privacy-settings-status" aria-live="polite"></span>
+
+              <h3>7. Speicherung Ihrer Chat-Auswahl</h3>
+              <p>Damit Ihre Entscheidung zum Live-Chat berücksichtigt werden kann, speichern wir den Eintrag „seelenbund-chat-consent“ in Ihrem Browser. Diese Speicherung ist für die Verwaltung Ihrer Datenschutzentscheidung erforderlich. Über „Chat-Einstellungen verwalten“ können Sie eine erteilte Einwilligung jederzeit widerrufen oder den Chat wieder erlauben. Bei einem Widerruf wird der Chat für künftige Seitenaufrufe nicht mehr geladen. Bereits übermittelte Chatnachrichten werden dadurch nicht automatisch gelöscht.</p>
+
+              <h3>8. Externe Links</h3>
+              <p>Diese Website enthält Links zu externen Angeboten. Erst wenn Sie einen solchen Link anklicken, wird eine Verbindung zum jeweiligen Anbieter hergestellt. Für die Datenverarbeitung auf den verlinkten Seiten ist der jeweilige Anbieter verantwortlich.</p>
+
+              <h3>9. Speicherdauer</h3>
+              <p>Soweit in dieser Datenschutzerklärung keine besondere Speicherdauer genannt ist, speichern wir personenbezogene Daten nur so lange, wie der jeweilige Verarbeitungszweck besteht. Anschließend werden die Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten oder Rechtsansprüche eine längere Speicherung erfordern.</p>
+
+              <h3>10. Ihre Rechte</h3>
+              <p>Sie haben im Rahmen der gesetzlichen Voraussetzungen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Außerdem können Sie einer Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO aus Gründen, die sich aus Ihrer besonderen Situation ergeben, widersprechen. Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+
+              <h3>11. Beschwerderecht bei einer Aufsichtsbehörde</h3>
+              <p>Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
+
+              <h3>12. Automatisierte Entscheidungen</h3>
+              <p>Eine automatisierte Entscheidungsfindung einschließlich Profiling findet nicht statt.</p>
+
+              <h3>13. Aktualisierung dieser Datenschutzerklärung</h3>
+              <p>Wir passen diese Datenschutzerklärung an, wenn sich die Website, die eingesetzten Dienste oder die rechtlichen Anforderungen ändern.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="overlay" id="hours-overlay">
-    <div class="overlay-box">
-      <button class="overlay-close" id="close-hours" aria-label="Overlay schließen">×</button>
-      <h2>Öffnungszeiten</h2>
-
-      <div class="hours-layout">
-        <div class="hours-list">
-          <div class="hours-row">
-            <span class="hours-day">Montag bis Mittwoch:</span>
-            <span class="hours-time">09:30 – 13:00 Uhr<br>14:30 – 19:00 Uhr</span>
-          </div>
-          <div class="hours-row">
-            <span class="hours-day">Donnerstag:</span>
-            <span class="hours-time">14:00 – 19:00 Uhr</span>
-          </div>
-          <div class="hours-row">
-            <span class="hours-day">Freitag:</span>
-            <span class="hours-time">09:00 – 13:00 Uhr</span>
-          </div>
-        </div>
-
-        <div class="hours-note">
-          <strong>Termine nach Vereinbarung</strong>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="overlay" id="impressum-overlay">
     <div class="overlay-box">
       <button class="overlay-close" id="close-impressum" aria-label="Impressum schließen">×</button>
       <h2>Impressum</h2>
-      <div class="hours-list">
+      <div>
         <p><strong>Tierpsychologie</strong></p>
         <p>Pia Bortels</p>
         <p>Alte Stöckener Str. 94</p>
@@ -977,7 +900,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 Tierpsychologie Seelenbund</div>
+     <div>© 2026 Tierpsychologie Seelenbund</div>
       <a href="impressum.html">Impressum &amp; Datenschutz</a>
     </div>
   </footer>
@@ -987,30 +910,9 @@
       document.body.classList.add("page-visible");
     });
 
-    const openBtn = document.getElementById("open-hours");
-    const closeBtn = document.getElementById("close-hours");
-    const overlay = document.getElementById("hours-overlay");
-
     const openImpressumBtn = document.getElementById("open-impressum");
     const closeImpressumBtn = document.getElementById("close-impressum");
     const impressumOverlay = document.getElementById("impressum-overlay");
-
-    if (openBtn && closeBtn && overlay) {
-      openBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        overlay.classList.add("active");
-      });
-
-      closeBtn.addEventListener("click", function () {
-        overlay.classList.remove("active");
-      });
-
-      overlay.addEventListener("click", function (e) {
-        if (e.target === overlay) {
-          overlay.classList.remove("active");
-        }
-      });
-    }
 
     if (openImpressumBtn && closeImpressumBtn && impressumOverlay) {
       openImpressumBtn.addEventListener("click", function (e) {
@@ -1038,7 +940,6 @@
         !href.startsWith('mailto:') &&
         !href.startsWith('tel:') &&
         !link.hasAttribute('target') &&
-        link.id !== 'open-hours' &&
         link.id !== 'open-impressum'
       ) {
         link.addEventListener('click', function (e) {
