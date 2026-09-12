@@ -362,6 +362,46 @@
       box-shadow:
         0 8px 22px rgba(99, 74, 58, 0.06),
         inset 0 1px 8px rgba(255,255,255,0.22);
+      position: relative;
+      overflow: hidden;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .service-block > * {
+      filter: blur(9px);
+      opacity: 0.78;
+      pointer-events: none;
+    }
+
+    .service-block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      background: rgba(255,255,255,0.3);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    .service-block::after {
+      content: "Aktuell nicht Verfügbar!";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 21;
+      pointer-events: none;
+      padding: 0.55rem 1.15rem;
+      border: 1px solid rgba(169,87,87,0.24);
+      border-radius: 10px;
+      color: #a95757;
+      background: rgba(255,255,255,0.88);
+      box-shadow: 0 8px 24px rgba(99,74,58,0.12);
+      font-size: clamp(0.92rem, 1.6vw, 1.12rem);
+      font-weight: 650;
+      white-space: nowrap;
+      transform: translate(-50%, -50%) rotate(-5deg);
     }
 
     .service-head {
@@ -742,7 +782,7 @@
   </div>
 
   <p>
-    Ein kurzes erstes Gespräch, um dein Anliegen kennenzulernen und gemeinsam zu schauen,<br>
+    Ein kurzes erstes Gespräch, um Ihr Anliegen kennenzulernen und gemeinsam zu schauen,<br>
     welche Unterstützung passend sein kann.
   </p>
 </div>
@@ -770,12 +810,12 @@
               <p><strong>Inhalt der Verhaltensberatung:</strong></p>
               <ul>
                 <li>Auswertung des vorab ausgefüllten Anamnesebogens</li>
-                <li>Gespräch über eure aktuelle Situation und eure bisherigen Erfahrungen</li>
+                <li>Gespräch über Ihre aktuelle Situation und Ihre bisherigen Erfahrungen</li>
                 <li>Ruhige Beobachtung und fachliche Einschätzung deines Hundes im aktuellen Verhalten</li>
-                <li>Blick auf eure Beziehung und Kommunikation im Alltag</li>
+                <li>Blick auf Ihre Beziehung und Kommunikation im Alltag</li>
                 <li>Analyse möglicher Ursachen, z. B. Stress, Unsicherheit, Lernerfahrungen oder Krankheit</li>
                 <li>Erste individuelle Trainingsempfehlungen und Lösungsansätze oder ggf. Managementmaßnahmen</li>
-                <li>Erste kleine Übungen, die du direkt umsetzen kannst</li>
+                <li>Erste kleine Übungen, die Sie direkt umsetzen können</li>
                 <li>Beantwortung offener Fragen und Nachbetreuung</li>
               </ul>
             </div>
@@ -810,7 +850,7 @@
               </p>
 
               <p>
-                Ein neuer Start. Ein neues Leben. Und jede Menge neuer Eindrücke für deinen Hund.
+                Ein neuer Start. Ein neues Leben. Und jede Menge neuer Eindrücke für Ihren Hund.
               </p>
 
               <p>
@@ -822,7 +862,7 @@
               </p>
 
               <p>
-                Ich begleite euch in den ersten wichtigen Wochen – Schritt für Schritt, in eurem Tempo. Ohne Druck. Dafür mit Klarheit, Struktur und ganz viel Verständnis für deinen Hund.
+                Ich begleite Sie in den ersten wichtigen Wochen – Schritt für Schritt, in Ihrem Tempo. Ohne Druck. Dafür mit Klarheit, Struktur und ganz viel Verständnis für Ihren Hund.
               </p>
 
               <p><strong>Enthalten sind:</strong></p>
@@ -839,7 +879,7 @@
               </ul>
 
               <p class="service-note">
-                Hunde aus dem Ausland bringen manchmal nicht nur ihre Geschichte, sondern auch körperliche Themen mit. Deshalb empfehle ich zu Beginn immer eine tierärztliche Abklärung, um sicherzugehen, dass dein Hund sich auch gesundheitlich wohlfühlt.
+                Hunde aus dem Ausland bringen manchmal nicht nur ihre Geschichte, sondern auch körperliche Themen mit. Deshalb empfehle ich zu Beginn immer eine tierärztliche Abklärung, um sicherzugehen, dass Ihr Hund sich auch gesundheitlich wohlfühlt.
               </p>
 
               <p><strong>Im zweiten Termin:</strong></p>
@@ -865,15 +905,15 @@
                 <li>Gemeinsamer Blick auf die letzten vier Wochen</li>
                 <li>Feinabstimmung der bisherigen Trainingsschritte</li>
                 <li>Anpassung des Trainings an neue Herausforderungen</li>
-                <li>Stärkung deiner Sicherheit im Umgang mit deinem Hund</li>
+                <li>Stärkung Ihrer Sicherheit im Umgang mit Ihrem Hund</li>
               </ul>
 
               <p>
-                Im letzten Termin schauen wir gemeinsam, was sich in den letzten Wochen entwickelt hat. Wir festigen die bisherigen Trainingsschritte, klären offene Fragen und passen das Training an euren Alltag an.
+                Im letzten Termin schauen wir gemeinsam, was sich in den letzten Wochen entwickelt hat. Wir festigen die bisherigen Trainingsschritte, klären offene Fragen und passen das Training an Ihren Alltag an.
               </p>
 
               <p>
-                So gehst du mit einem sicheren Gefühl und klaren nächsten Schritten aus der Begleitung. Falls die Betreuung nicht ausreichend sein sollte, ist eine Erweiterung jederzeit möglich. Sprich mich gerne an.
+                So gehen Sie mit einem sicheren Gefühl und klaren nächsten Schritten aus der Begleitung. Falls die Betreuung nicht ausreichend sein sollte, ist eine Erweiterung jederzeit möglich. Sprechen Sie mich gerne an.
               </p>
             </div>
 
@@ -884,7 +924,7 @@
               </div>
 
               <p>
-  Diese Beratung unterstützt dich dabei, die Bedürfnisse eines Hundes aus dem Ausland besser einzuschätzen,<br>
+  Diese Beratung unterstützt Sie dabei, die Bedürfnisse eines Hundes aus dem Ausland besser einzuschätzen,<br>
   mögliche Herausforderungen realistisch zu betrachten und den Start im neuen Zuhause möglichst ruhig und sicher zu gestalten.
 </p>
             </div>
@@ -965,19 +1005,19 @@
   </div>
 
   <p>
-  In dieser Beratung schauen wir gemeinsam, ob und welches Tier wirklich zu dir und deinem Leben passt<br>
+  In dieser Beratung schauen wir gemeinsam, ob und welches Tier wirklich zu Ihnen und Ihrem Leben passt<br>
   – ehrlich, individuell und ohne Druck.
 </p>
 
   <p>
-    Ziel ist es, dir eine sichere Grundlage für eine verantwortungsvolle Entscheidung zu geben.
+    Ziel ist es, Ihnen eine sichere Grundlage für eine verantwortungsvolle Entscheidung zu geben.
   </p>
 
   <p><strong>Inhalt:</strong></p>
 
   <ul>
-    <li>Analyse deiner aktuellen Lebenssituation</li>
-    <li>Gemeinsame Einschätzung, welches Tier zu dir passen könnte</li>
+    <li>Analyse Ihrer aktuellen Lebenssituation</li>
+    <li>Gemeinsame Einschätzung, welches Tier zu Ihnen passen könnte</li>
     <li>Aufklärung über Bedürfnisse, Aufwand und Verantwortung</li>
     <li>Realistische Einschätzung des Alltags mit Tier</li>
     <li>Vorbereitung auf einen gelungenen Start</li>
@@ -1034,6 +1074,13 @@
         if (e.target === impressumOverlay) {
           impressumOverlay.classList.remove("active");
         }
+      });
+    }
+
+    const protectedOffers = document.querySelector('.service-scroll');
+    if (protectedOffers) {
+      ['copy', 'cut', 'contextmenu', 'dragstart'].forEach((eventName) => {
+        protectedOffers.addEventListener(eventName, (event) => event.preventDefault());
       });
     }
 

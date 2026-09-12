@@ -324,6 +324,12 @@
       scrollbar-gutter: stable;
       scrollbar-width: thin;
       scrollbar-color: rgba(77, 64, 56, 0.10) transparent;
+      transition: opacity 180ms ease, filter 180ms ease;
+    }
+
+    .service-scroll.switching {
+      opacity: 0;
+      filter: brightness(2.4);
     }
 
     .service-scroll::-webkit-scrollbar {
@@ -362,7 +368,10 @@
       box-shadow:
         0 8px 22px rgba(99, 74, 58, 0.06),
         inset 0 1px 8px rgba(255,255,255,0.22);
+      position: relative;
+      overflow: hidden;
     }
+
 
     .service-head {
   display: grid;
@@ -409,8 +418,10 @@
       font-size: 0.9rem;
       line-height: 1.65;
       color: var(--text);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.65rem;
     }
+
+    .service-block p:last-child { margin-bottom: 0; }
 
     .service-block ul {
       margin-left: 1.1rem;
@@ -425,6 +436,85 @@
       line-height: 1.55;
       color: var(--text);
     }
+
+    .offer-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.55rem;
+      margin: -0.8rem 0 1.55rem;
+      flex-wrap: wrap;
+    }
+
+    .offer-tab,
+    .more-info-button,
+    .back-button {
+      appearance: none;
+      border: 1px solid rgba(77, 64, 56, 0.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.68);
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .offer-tab {
+      width: auto;
+      min-width: 0;
+      padding: 0.48rem 0.9rem;
+      font-weight: 600;
+      font-size: 0.86rem;
+    }
+
+    .offer-tab:hover,
+    .offer-tab:focus-visible,
+    .offer-tab.active {
+      background: rgba(216, 190, 165, 0.46);
+      box-shadow: 0 7px 18px rgba(99, 74, 58, 0.08);
+      outline: none;
+    }
+
+    .offer-tab:active,
+    .more-info-button:active,
+    .back-button:active { transform: translateY(1px); }
+
+    .offer-panel[hidden],
+    .offer-summary[hidden],
+    .offer-more[hidden] { display: none; }
+
+    .offer-panel { padding-bottom: 2.4rem; }
+    .offer-panel.is-fading { animation: category-fade 420ms ease both; }
+
+    @keyframes category-fade {
+      0% { opacity: 0; filter: brightness(1.6); }
+      48% { opacity: 0.18; filter: brightness(1.9); }
+      100% { opacity: 1; filter: brightness(1); }
+    }
+
+    .offer-more.is-entering { animation: offer-slide-in 240ms ease both; }
+
+    @keyframes offer-slide-in {
+      from { opacity: 0; transform: translateX(22px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .more-info-button {
+      padding: 0.35rem 0.75rem;
+      background: rgba(215, 234, 223, 0.62);
+      color: #617769;
+      font-size: 0.84rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .back-button {
+      margin-bottom: 1rem;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .service-block strong { font-weight: 600; }
 
     .service-note {
   color: var(--text-soft);
@@ -763,6 +853,12 @@
         <div class="service-card">
           <h1>Aktuelles Angebot</h1>
 
+          <div class="offer-tabs" role="tablist" aria-label="Angebotsbereiche">
+            <button class="offer-tab active" id="tab-betreuung" type="button" role="tab" aria-selected="true" aria-controls="panel-betreuung" data-offer-tab="betreuung">Betreuung</button>
+            <button class="offer-tab" id="tab-beratung" type="button" role="tab" aria-selected="false" aria-controls="panel-beratung" data-offer-tab="beratung">Beratung</button>
+            <button class="offer-tab" id="tab-tierschutz" type="button" role="tab" aria-selected="false" aria-controls="panel-tierschutz" data-offer-tab="tierschutz">Für Tierschutz/Organisationen</button>
+          </div>
+
           <div class="service-scroll">
             <div class="service-block">
               <div class="service-head">
@@ -787,8 +883,7 @@
               <div class="service-head">
                 <h2>Vor- und Nachkontrollen bei Tiervermittlungen</h2>
                 <div class="badge-stack">
-  <span class="price-badge">Preise auf Anfrage</span>
-  <span class="price-badge">bis 100 km</span>
+  <span class="price-badge">aktuell kostenlos</span>
 </div>
               </div>
               <p>Eine verantwortungsvolle Tiervermittlung endet nicht mit der Übergabe des Tieres. Damit Tier und zukünftiges Zuhause möglichst gut zusammenpassen, biete ich <strong>Vor- und Nachkontrollen im Rahmen von Tiervermittlungen</strong> an.</p>
@@ -832,9 +927,7 @@
                 <h3>Langjährige Erfahrung im Tierschutz</h3>
                 <p>Ich führe bereits seit <strong>15 Jahren Vor- und Nachkontrollen für verschiedene Tierschutzvereine</strong> durch und verfüge dadurch über umfangreiche praktische Erfahrung in diesem Bereich.</p>
                 <p>Mir ist dabei wichtig, mir vor Ort ein möglichst umfassendes Bild von der jeweiligen Situation zu machen und meine Beobachtungen anschließend nachvollziehbar und sorgfältig in einem Bericht festzuhalten.</p>
-                <p><strong>Preise auf Anfrage.</strong></p>
-                <p>Der Preis richtet sich unter anderem nach Entfernung, zeitlichem Aufwand und den individuellen Anforderungen des jeweiligen Vor- oder Nachbesuchs.</p>
-                <p>Für Tierschutzvereine und regelmäßige Kooperationen können gerne <strong>individuelle Konditionen</strong> vereinbart werden.</p>
+                <p>Aktuell biete ich die Vor- und Nachkontrollen noch kostenlos an.</p>
               </div>
             </div>
 
@@ -938,10 +1031,10 @@
 
             <div class="service-block">
               <div class="service-head">
-                <h2>Geschirrberatung</h2>
-                <span class="price-badge">15 € · ca. 45–60 Min.</span>
+                <h2>Geschirr und Leinenberatung</h2>
+                <span class="price-badge">15 € · ca. 30 Min.</span>
               </div>
-              <p><strong>ca. 45–60 Minuten – 15 €</strong></p>
+              <p>ca. 30 Minuten – 15 €</p>
               <p>Ich unterstütze Sie bei der Auswahl und Anpassung eines passenden Hundegeschirrs.</p>
               <p><strong>Dabei berücksichtige ich insbesondere:</strong></p>
               <ul>
@@ -961,6 +1054,7 @@
                 <h2>Allgemeine Tierhaltungsberatung</h2>
                 <span class="price-badge">ab 25 €</span>
               </div>
+              <p class="service-note">Für Hunde, Katzen und Kleintiere</p>
               <p><strong>30 Minuten – 25 €<br>60 Minuten – 45 €</strong></p>
               <p><strong>Beratung und Information unter anderem zu:</strong></p>
               <ul>
@@ -971,7 +1065,6 @@
                 <li>allgemeiner Pflege und Versorgung</li>
                 <li>Bedürfnissen von Hund, Katze und Kleintieren</li>
                 <li>Alltag mit dem Tier</li>
-                <li>Vorbereitung auf die Anschaffung eines Tieres</li>
               </ul>
               <p class="service-note">Die Beratung dient der Information und Orientierung und ersetzt keine tierärztliche Untersuchung, Diagnose oder Behandlung.</p>
 
@@ -1030,10 +1123,10 @@
               </div>
               <p>Mir ist wichtig, dass eine gute und liebevolle Betreuung nicht davon abhängt, wie groß das eigene Budget ist.</p>
               <p>Deshalb möchte ich StudentInnen, RentnerInnen sowie BezieherInnen von Bürgergeld einen persönlichen Rabatt auf meine regulären Preise anbieten.</p>
-              <p>Den Rabatt erhältst du ganz unkompliziert <strong>gegen Vorlage eines entsprechenden Nachweises</strong>.</p>
-              <p>Sprich mich einfach darauf an – ganz ohne unangenehme Fragen. Deine Angaben werden selbstverständlich vertraulich und respektvoll behandelt.</p>
+              <p>Den Rabatt erhalten Sie ganz unkompliziert gegen Vorlage eines entsprechenden Nachweises.</p>
+              <p>Sprechen Sie mich einfach darauf an – ganz ohne unangenehme Fragen. Ihre Angaben werden selbstverständlich vertraulich und respektvoll behandelt.</p>
               <p>Denn für mich zählt vor allem eines:</p>
-              <p><strong>Dein Tier soll die Betreuung bekommen, die es verdient.</strong></p>
+              <p>Ihr Tier soll die Betreuung bekommen, die es verdient.</p>
             </div>
 
             <div class="service-block">
@@ -1062,6 +1155,165 @@
               <p>Damit ich meine Termine gut planen und anderen Tierhaltern freie Zeiten anbieten kann, bitte ich Sie, vereinbarte Termine <strong>mindestens 24 Stunden vorher abzusagen</strong>, falls Sie den Termin nicht wahrnehmen können.</p>
               <p>Bei einer Absage <strong>weniger als 24 Stunden vor dem vereinbarten Termin</strong> oder bei Nichterscheinen muss ich leider den <strong>vollen Preis der gebuchten Leistung</strong> berechnen.</p>
               <p>Vielen Dank für Ihr Verständnis und Ihre Rücksichtnahme.</p>
+            </div>
+
+            <div class="service-block" id="offer-preise">
+              <div class="service-head"><h2>Preise</h2></div>
+              <p>Die regulären Preise meiner Tierbetreuung gelten auch für kurzfristige Anfragen.</p>
+              <p>Bei besonders kurzfristigen Einsätzen kann je nach Aufwand und Uhrzeit ein Notfallzuschlag von 30 Euro anfallen. Dies bespreche ich vor Beginn der Betreuung transparent mit Ihnen.</p>
+              <p>Wenn es plötzlich schwierig wird, möchte ich versuchen, Ihnen und Ihrem Tier unkompliziert zu helfen.</p>
+            </div>
+
+            <div class="service-block" id="offer-hundeeinschaetzung">
+              <div class="service-head">
+                <h2>Einmalige fachliche Einschätzung Ihres Hundes</h2>
+                <span class="price-badge">30 €</span>
+              </div>
+              <p>Eine fachliche Einschätzung Ihres Hundes und seiner aktuellen Situation.</p>
+            </div>
+
+            <div class="service-block" id="offer-haustierauswahl">
+              <div class="service-head">
+                <h2>Beratung bei der Auswahl des passenden Haustieres</h2>
+                <span class="price-badge">35 € · ca. 60 Min.</span>
+              </div>
+              <p>Sie möchten sich ein Haustier anschaffen, wissen aber noch nicht genau, welches Tier am besten zu Ihnen und Ihrem Alltag passt?</p>
+              <p>Gerne unterstütze ich Sie dabei, sich einen Überblick zu verschaffen und die verschiedenen Möglichkeiten miteinander zu vergleichen.</p>
+              <p>Gemeinsam schauen wir unter anderem auf:</p>
+              <ul>
+                <li>Ihre persönliche Lebenssituation und Ihren Alltag</li>
+                <li>den zeitlichen Aufwand</li>
+                <li>Platz- und Haltungsbedingungen</li>
+                <li>Bedürfnisse und Ansprüche verschiedener Tierarten</li>
+                <li>laufende Kosten und notwendige Ausstattung</li>
+                <li>Pflege- und Betreuungsaufwand</li>
+                <li>die Frage, ob Hund, Katze oder ein Kleintier besser zu Ihnen passen könnte</li>
+                <li>welche Verantwortung und Verpflichtungen mit der Haltung verbunden sind</li>
+              </ul>
+              <p>Mir ist wichtig, dass die Anschaffung eines Tieres gut überlegt ist und Mensch und Tier möglichst gut zusammenpassen.</p>
+              <p>Die Beratung soll Ihnen dabei helfen, eine bewusste und gut informierte Entscheidung zu treffen. Die endgültige Entscheidung für ein bestimmtes Tier treffen selbstverständlich Sie selbst.</p>
+              <p>Auf Wunsch können wir die Beratung auch auf einen konkreten Tierwunsch ausrichten und gemeinsam besprechen, worauf Sie bei der Haltung und den jeweiligen Bedürfnissen achten sollten.</p>
+            </div>
+
+            <div class="service-block" id="offer-ankommen">
+              <div class="offer-summary">
+                <div class="service-head">
+                  <h2>Ankommen und Vertrauen aufbauen</h2>
+                  <div class="badge-stack">
+                    <span class="price-badge">144 €</span>
+                    <button class="more-info-button" type="button">Mehr Infos z. Angebot</button>
+                  </div>
+                </div>
+                <p>Spezialangebot für Hunde aus dem Ausland sowie generell ängstliche und unsichere Hunde.</p>
+                <p>Ein neuer Start. Ein neues Leben. Und jede Menge neuer Eindrücke für Ihren Hund.</p>
+                <p>Hunde aus dem Ausland brauchen oft mehr als nur Training – sie brauchen Zeit, Verständnis und eine sichere Begleitung, um wirklich anzukommen.</p>
+                <p>In meiner fünfzehnjährigen Tätigkeit im In- und Auslandstierschutz habe ich viele Adoptanten betreut und weiß, wie wichtig und sinnvoll eine fachliche Begleitung gerade am Anfang ist. Sie gibt dem Halter Sicherheit im Handling und schafft somit die Basis für eine stabile und vertrauensvolle Mensch-Hund-Beziehung.</p>
+                <p>Ich begleite Sie in den ersten wichtigen Wochen – Schritt für Schritt, in Ihrem Tempo. Ohne Druck. Dafür mit Klarheit, Struktur und ganz viel Verständnis für Ihren Hund.</p>
+                <p>Enthalten sind:</p>
+                <ul>
+                  <li>bis zu 6 Einzeltermine, bei Bedarf auch mehr, in den ersten 3 Wochen nach Ankunft des Hundes</li>
+                  <li>Beratung zu Sicherheitsgeschirr, richtiger Sicherung und Spaziergängen</li>
+                  <li>Unterstützung bei der Eingewöhnung und im Alltag</li>
+                  <li>Beratung zu Pflege, Baden, Futter und den ersten Tierarztbesuchen</li>
+                  <li>Einschätzung von Verhalten und möglichen Auffälligkeiten</li>
+                  <li>Besprechung, wann Training sinnvoll ist – bei Bedarf vermittle ich an eine passende Kollegin</li>
+                  <li>Begleitung zum ersten Tierarztbesuch auf Wunsch</li>
+                  <li>Begleitung bei den ersten Spaziergängen auf Wunsch</li>
+                  <li>Persönliche Ansprechpartnerin für Fragen, die während der ersten Wochen entstehen</li>
+                  <li>Bei Bedarf Vermittlung an weitere Fachpersonen, z. B. Ernährungsberatung oder HundetrainerInnen</li>
+                </ul>
+              </div>
+
+              <div class="offer-more" hidden>
+                <button class="back-button" type="button">← Zurück zum Angebot</button>
+                <h2>Mehr Infos zum Angebot</h2>
+                <p>Ein Hund aus dem Ausland zieht ein – und plötzlich gibt es unglaublich viele Fragen.</p>
+                <ul>
+                  <li>Wie sichere ich meinen Hund richtig?</li>
+                  <li>Wann darf ich zum ersten Mal mit ihm spazieren gehen?</li>
+                  <li>Wann ist der richtige Zeitpunkt für den ersten Tierarztbesuch?</li>
+                  <li>Was mache ich, wenn mein Hund Angst hat, sich versteckt oder plötzlich ganz anders reagiert als erwartet?</li>
+                  <li>Wann darf ich mit dem Training beginnen?</li>
+                  <li>Und was ist eigentlich völlig normales Verhalten in der Eingewöhnungszeit?</li>
+                </ul>
+                <p>Gerade die ersten Wochen können für Mensch und Hund aufregend, wunderschön, aber auch herausfordernd sein.</p>
+                <p>Mit meinem „Ankommen“-Paket begleite ich Sie und Ihren Hund während der ersten drei Wochen und stehe Ihnen bei den vielen kleinen und großen Fragen zur Seite.</p>
+                <h3>Gemeinsam schaffen wir einen sicheren Start</h3>
+                <p>In den ersten Wochen geht es nicht darum, dass Ihr Hund möglichst schnell „funktioniert“. Es geht darum, Vertrauen aufzubauen, Sicherheit zu schaffen und Ihren Hund in seinem Tempo in seinem neuen Leben ankommen zu lassen.</p>
+                <p>Dabei schauen wir individuell auf Sie als Mensch-Hund-Team und darauf, was Ihr Hund gerade braucht.</p>
+                <h3>Das beinhaltet Ihr 3-Wochen-Paket</h3>
+                <h3>Bis zu 6 persönliche Termine innerhalb von 3 Wochen</h3>
+                <h3>🦺 Sicherheit &amp; Management</h3>
+                <ul>
+                  <li>Beratung zum passenden Sicherheitsgeschirr</li>
+                  <li>richtiges Anlegen und Einstellen</li>
+                  <li>sichere Gestaltung der ersten Spaziergänge</li>
+                  <li>Tipps zur Sicherung im Alltag und zu Hause</li>
+                  <li>Einschätzung möglicher Situationen, in denen Ihr Hund sich erschrecken oder flüchten könnte</li>
+                </ul>
+                <h3>🏡 Ankommen im neuen Zuhause</h3>
+                <p>Wir besprechen unter anderem:</p>
+                <ul>
+                  <li>Wie viel Ruhe braucht mein Hund?</li>
+                  <li>Wie gestalte ich die ersten Tage?</li>
+                  <li>Wann darf ich Besuch empfangen?</li>
+                  <li>Wie gehe ich mit Unsicherheit oder Ängsten um?</li>
+                  <li>Was mache ich, wenn mein Hund sich zurückzieht?</li>
+                  <li>Wie kann ich Vertrauen und Orientierung aufbauen?</li>
+                </ul>
+                <h3>🩺 Der erste Tierarztbesuch</h3>
+                <p>Wenn Sie möchten, begleite ich Sie und Ihren Hund auch zum ersten Tierarzttermin und unterstütze Sie dabei, die Situation möglichst stressarm zu gestalten.</p>
+                <h3>🍖 Ernährung &amp; Pflege</h3>
+                <p>Auch die ganz alltäglichen Fragen dürfen Raum bekommen:</p>
+                <ul>
+                  <li>Wann sollte mein Hund das erste Mal gebadet werden?</li>
+                  <li>Was mache ich, wenn mein Hund unangenehm riecht?</li>
+                  <li>Welche Pflege braucht er?</li>
+                  <li>Wann sollte ich die Ernährung umstellen?</li>
+                  <li>Welches Futter ist geeignet?</li>
+                </ul>
+                <p>Bei speziellen Ernährungsfragen kann ich Sie bei Bedarf an eine qualifizierte Ernährungsberatung weiterleiten.</p>
+                <h3>🧠 Verhalten verstehen</h3>
+                <p>Ein Hund aus dem Ausland bringt seine eigene Geschichte mit.</p>
+                <p>Gemeinsam schauen wir deshalb genau hin:</p>
+                <ul>
+                  <li>Was ist normales Eingewöhnungsverhalten?</li>
+                  <li>Was könnte auf Überforderung oder Unsicherheit hindeuten?</li>
+                  <li>Welche Verhaltensweisen sollten wir zunächst beobachten?</li>
+                  <li>Und wann ist es sinnvoll, gezielt mit Training zu beginnen?</li>
+                </ul>
+                <p>Dabei geht es nicht darum, Ihren Hund vorschnell zu beurteilen oder zu „problematisieren“, sondern darum, sein Verhalten zu verstehen und Ihnen einen guten gemeinsamen Start zu ermöglichen.</p>
+                <h3>🎓 Training &amp; Hundeschule</h3>
+                <ul>
+                  <li>Wann ist der richtige Zeitpunkt für Training?</li>
+                  <li>Braucht ihr eine Hundeschule?</li>
+                  <li>Einzeltraining?</li>
+                  <li>Oder zunächst einfach ganz viel Ruhe und Sicherheit?</li>
+                </ul>
+                <p>Ich helfe Ihnen dabei, den passenden Weg für Sie zu finden und empfehle bei Bedarf geeignete weitere Fachstellen.</p>
+                <p>Während der drei Wochen können Sie sich mit Ihren Fragen an mich wenden. Denn gerade am Anfang entstehen viele Fragen oft erst im Alltag.</p>
+                <p>Sie müssen nicht erst wochenlang überlegen, ob eine Situation „normal“ ist oder ob Sie etwas falsch machen. Sie dürfen fragen.</p>
+              </div>
+            </div>
+
+            <div class="service-block" id="offer-kleintierberatung">
+              <div class="service-head"><h2>Kleintierberatung</h2><span class="price-badge">ab 25 €</span></div>
+              <p>Für Kaninchen, Meerschweinchen und Mäuse.</p>
+              <ul>
+                <li>Begleitung und Betreuung vor und während der Anschaffung – 35 €</li>
+                <li>Beratung zur Gehegegestaltung – 25 €</li>
+              </ul>
+            </div>
+
+            <div class="service-block" id="offer-adoption">
+              <div class="service-head"><h2>Spezielle Beratung zum Thema Adoption | Hund aus dem Ausland</h2><span class="price-badge">40 €</span></div>
+              <p>Diese Beratung unterstützt Sie dabei, die Bedürfnisse eines Hundes aus dem Ausland besser einzuschätzen, mögliche Herausforderungen realistisch zu betrachten und den Start im neuen Zuhause möglichst ruhig und sicher zu gestalten.</p>
+            </div>
+
+            <div class="service-block" id="offer-notfallberatung">
+              <div class="service-head"><h2>Notfall | Managementberatung</h2><span class="price-badge">50 €</span></div>
+              <p>Geeignet z. B. bei Hundebiss, Unfall oder Krankheit.</p>
+              <p>In akuten Situationen besprechen wir erste wichtige Schritte, mögliche Managementmaßnahmen und sinnvolle nächste Wege, um die Situation schnellstmöglich zu stabilisieren.</p>
             </div>
           </div>
         </div>
@@ -1115,6 +1367,125 @@
           impressumOverlay.classList.remove("active");
         }
       });
+    }
+
+    const serviceScroll = document.querySelector('.service-scroll');
+    const allServiceBlocks = serviceScroll ? Array.from(serviceScroll.querySelectorAll(':scope > .service-block')) : [];
+    const blockByTitle = (title) => allServiceBlocks.find((block) => block.querySelector('h2')?.textContent.trim() === title);
+    const blockById = (id) => document.getElementById(id);
+
+    if (serviceScroll) {
+      const generalAdvice = blockByTitle('Allgemeine Tierhaltungsberatung');
+      const nestedPetChoice = generalAdvice
+        ? Array.from(generalAdvice.querySelectorAll('.offer-subsection')).find((section) => section.querySelector('h3')?.textContent.trim() === 'Beratung bei der Auswahl des passenden Haustieres')
+        : null;
+      nestedPetChoice?.remove();
+
+      const carePanel = document.createElement('div');
+      carePanel.className = 'offer-panel';
+      carePanel.id = 'panel-betreuung';
+      carePanel.setAttribute('role', 'tabpanel');
+      carePanel.setAttribute('aria-labelledby', 'tab-betreuung');
+
+      const advicePanel = document.createElement('div');
+      advicePanel.className = 'offer-panel';
+      advicePanel.id = 'panel-beratung';
+      advicePanel.setAttribute('role', 'tabpanel');
+      advicePanel.setAttribute('aria-labelledby', 'tab-beratung');
+      advicePanel.hidden = true;
+
+      const welfarePanel = document.createElement('div');
+      welfarePanel.className = 'offer-panel';
+      welfarePanel.id = 'panel-tierschutz';
+      welfarePanel.setAttribute('role', 'tabpanel');
+      welfarePanel.setAttribute('aria-labelledby', 'tab-tierschutz');
+      welfarePanel.hidden = true;
+
+      [
+        blockByTitle('Kennenlerntermin'),
+        blockByTitle('Hundebetreuung bei Ihnen zu Hause'),
+        blockByTitle('Katzenbetreuung bei Ihnen zu Hause'),
+        blockByTitle('Kleintierbetreuung bei Ihnen zu Hause'),
+        blockByTitle('Notfallbetreuung'),
+        blockById('offer-preise'),
+        blockByTitle('Weil jedes Tier liebevolle Betreuung verdient'),
+        blockByTitle('Anfahrt'),
+        blockByTitle('Sonderzeiten'),
+        blockByTitle('Terminabsagen')
+      ].filter(Boolean).forEach((block) => carePanel.appendChild(block));
+
+      [
+        blockById('offer-hundeeinschaetzung'),
+        blockById('offer-haustierauswahl'),
+        blockById('offer-ankommen'),
+        generalAdvice,
+        blockById('offer-kleintierberatung'),
+        blockByTitle('Geschirr und Leinenberatung'),
+        blockById('offer-adoption'),
+        blockById('offer-notfallberatung')
+      ].filter(Boolean).forEach((block) => advicePanel.appendChild(block));
+
+      [blockByTitle('Vor- und Nachkontrollen bei Tiervermittlungen')]
+        .filter(Boolean)
+        .forEach((block) => welfarePanel.appendChild(block));
+
+      serviceScroll.replaceChildren(carePanel, advicePanel, welfarePanel);
+
+      const arrivalOffer = blockById('offer-ankommen');
+      const arrivalSummary = arrivalOffer?.querySelector('.offer-summary');
+      const arrivalMore = arrivalOffer?.querySelector('.offer-more');
+      const moreButton = arrivalOffer?.querySelector('.more-info-button');
+      const backButton = arrivalOffer?.querySelector('.back-button');
+
+      const resetArrivalDetails = () => {
+        if (!arrivalSummary || !arrivalMore) return;
+        arrivalMore.hidden = true;
+        arrivalMore.classList.remove('is-entering');
+        arrivalSummary.hidden = false;
+      };
+
+      document.querySelectorAll('[data-offer-tab]').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          resetArrivalDetails();
+          document.querySelectorAll('[data-offer-tab]').forEach((item) => {
+            const active = item === tab;
+            item.classList.toggle('active', active);
+            item.setAttribute('aria-selected', String(active));
+          });
+          serviceScroll.classList.add('switching');
+          window.setTimeout(() => {
+            const selected = tab.dataset.offerTab;
+            carePanel.hidden = selected !== 'betreuung';
+            advicePanel.hidden = selected !== 'beratung';
+            welfarePanel.hidden = selected !== 'tierschutz';
+            serviceScroll.scrollTop = 0;
+            serviceScroll.classList.remove('switching');
+            const visiblePanel = selected === 'betreuung' ? carePanel : selected === 'beratung' ? advicePanel : welfarePanel;
+            visiblePanel.classList.remove('is-fading');
+            void visiblePanel.offsetWidth;
+            visiblePanel.classList.add('is-fading');
+          }, 180);
+        });
+      });
+
+      moreButton?.addEventListener('click', () => {
+        arrivalSummary.hidden = true;
+        arrivalMore.hidden = false;
+        arrivalMore.classList.add('is-entering');
+        serviceScroll.scrollTo({ top: arrivalOffer.offsetTop - advicePanel.offsetTop, behavior: 'smooth' });
+        backButton.focus();
+      });
+
+      backButton?.addEventListener('click', () => {
+        arrivalMore.hidden = true;
+        arrivalMore.classList.remove('is-entering');
+        arrivalSummary.hidden = false;
+        serviceScroll.scrollTo({ top: arrivalOffer.offsetTop - advicePanel.offsetTop, behavior: 'smooth' });
+        moreButton.focus();
+      });
+
+      window.addEventListener('pagehide', resetArrivalDetails);
+      document.querySelectorAll('nav a, footer a').forEach((link) => link.addEventListener('click', resetArrivalDetails));
     }
 
     document.querySelectorAll('a[href]').forEach(link => {

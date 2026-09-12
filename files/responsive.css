@@ -517,3 +517,157 @@
     pointer-events: none !important;
   }
 }
+
+}
+
+/* Einheitlicher Sprachumschalter für alle Seiten */
+.site-nav a {
+  text-transform: capitalize !important;
+}
+
+.language-switcher {
+  position: fixed !important;
+  top: 0.78rem !important;
+  right: 0.9rem !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 4800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.language-switcher-toggle {
+  min-width: 42px;
+  height: 38px;
+  padding: 0 0.72rem;
+  border: 1px solid rgba(77, 64, 56, 0.14);
+  border-radius: 999px;
+  color: #4d4038;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 18px rgba(99,74,58,0.1);
+  cursor: pointer;
+  font: 700 0.78rem/1 Arial, Helvetica, sans-serif;
+}
+
+.language-switcher-menu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  right: 0;
+  display: grid;
+  min-width: 155px;
+  padding: 0.38rem;
+  border: 1px solid rgba(77, 64, 56, 0.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 14px 34px rgba(99,74,58,0.15);
+  backdrop-filter: blur(12px);
+}
+
+.language-switcher-menu[hidden] { display: none; }
+
+.language-option {
+  padding: 0.55rem 0.68rem;
+  border: 0;
+  border-radius: 9px;
+  color: #4d4038;
+  background: transparent;
+  cursor: pointer;
+  font: 500 0.82rem/1.25 Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.language-option:hover,
+.language-option:focus-visible,
+.language-option.active {
+  background: rgba(216,190,165,0.3);
+  outline: none;
+}
+
+#google_translate_element,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.skiptranslate iframe,
+#goog-gt-tt,
+.goog-te-spinner-pos,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf { display: none !important; }
+
+body { top: 0 !important; }
+
+html.translation-pending body {
+  opacity: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .language-switcher { top: 0.45rem !important; right: 0.5rem !important; bottom: auto !important; left: auto !important; }
+  .language-switcher-toggle { height: 34px; min-width: 38px; padding: 0 0.58rem; }
+}
+
+/* Einheitlicher Footer mit Kontakt-Symbolen */
+.footer-inner {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+}
+
+.footer-copyright {
+  min-width: 0;
+  font-size: 0.68rem;
+  line-height: 1.2 !important;
+  white-space: normal;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.38rem;
+}
+
+.footer-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  padding: 0 !important;
+  border: 1px solid rgba(77, 64, 56, 0.15);
+  border-radius: 50%;
+  color: #75655b !important;
+  background: rgba(255,255,255,0.7);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-icon:hover,
+.footer-icon:focus-visible {
+  color: #b27659 !important;
+  border-color: rgba(178,118,89,0.35);
+  background: #fff;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.footer-icon svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-icon-facebook svg { fill: currentColor; stroke: none; }
+
+.footer-inner > a:last-child {
+  justify-self: end;
+}
+
+@media (max-width: 760px) {
+  .footer-inner { gap: 0.35rem !important; }
+  .footer-copyright { font-size: 0.5rem; }
+  .footer-socials { gap: 0.2rem; }
+  .footer-icon { width: 22px; height: 22px; }
+  .footer-icon svg { width: 12px; height: 12px; }
+  .footer-inner > a:last-child { font-size: 0.56rem !important; }
+}

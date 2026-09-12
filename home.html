@@ -429,9 +429,17 @@ main {
     .image-card {
   padding: 0.7rem;
   overflow: hidden;
+  position: relative;
 }
 
-    .hero-visual {
+    .image-stage {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      aspect-ratio: 4 / 4.8;
+    }
+
+.hero-visual {
   border-radius: 18px;
   aspect-ratio: 4 / 4.8;
   width: 100%;
@@ -446,12 +454,43 @@ main {
   transition: filter 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+    .trust-panel {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      padding: 1.15rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.93);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.32s ease, visibility 0.32s ease;
+    }
+
+    .image-card:hover .trust-panel,
+    .image-card:focus-within .trust-panel {
+      opacity: 1;
+      visibility: visible;
+    }
+    .trust-panel h2 { margin-bottom: clamp(1.9rem, 4vw, 3rem); font-size: clamp(1.1rem, 2.1vw, 1.4rem); font-weight: 700; line-height: 1.2; }
+    .trust-panel p { margin: 0 0 0.65rem; font-size: clamp(0.62rem, 1.7vw, 1.05rem); font-weight: 400; line-height: 1.5; text-align: left; }
+    .trust-panel p:last-child { margin-bottom: 0; }
+
 .hero-visual:hover {
   filter: saturate(1.2) brightness(1.04) contrast(1.05);
   transform: scale(1.015);
   box-shadow:
     inset 0 0 18px rgba(255,255,255,0.22),
     0 20px 36px rgba(99,74,58,0.14);
+}
+
+.image-card:hover .hero-visual,
+.image-card:focus-within .hero-visual,
+.image-card:hover .hero-visual:hover {
+  filter: saturate(0.85) brightness(0.72) blur(4px);
+  transform: scale(1.025);
 }
 
     footer {
@@ -537,25 +576,25 @@ main {
     }
 
     .home-notice {
-      margin-bottom: 1.35rem;
-      padding: 0.85rem 1rem;
+      margin-bottom: 1rem;
+      padding: 0.58rem 0.78rem;
       border: 1px solid rgba(191, 126, 88, 0.16);
       border-left: 3px solid rgba(183, 92, 92, 0.72);
       border-radius: 14px;
       background: linear-gradient(135deg, rgba(255, 247, 242, 0.92), rgba(255, 251, 248, 0.72));
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
       font-weight: 600;
-      font-size: 0.84rem;
-      line-height: 1.48;
+      font-size: 0.74rem;
+      line-height: 1.34;
     }
 
     .home-notice p + p {
-      margin-top: 0.45rem;
+      margin-top: 0.24rem;
     }
 
     .home-notice-title {
       color: #a95757;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.01em;
     }
@@ -579,7 +618,7 @@ main {
       overflow-x: hidden;
       overflow-y: auto;
       padding: 2.15rem 2.35rem 2.25rem;
-      color: #aa5454;
+      color: #2f2926;
       text-align: center;
       background:
         radial-gradient(circle at 100% 0%, rgba(215, 234, 223, 0.42), transparent 32%),
@@ -616,15 +655,15 @@ main {
     .notice-overlay-box h2 {
       margin-bottom: 0.85rem;
       color: #a95757;
-      font-size: 1rem;
+      font-size: 1.55rem;
       font-weight: 700;
-      letter-spacing: 0.025em;
+      letter-spacing: 0;
     }
 
     .notice-overlay-box p {
-      font-weight: 600;
-      font-size: 1rem;
-      line-height: 1.7;
+      font-weight: 450;
+      font-size: 0.98rem;
+      line-height: 1.68;
     }
 
     .notice-overlay-box p + p {
@@ -992,23 +1031,23 @@ main {
         <div class="hero-card">
           <div class="home-notice" aria-label="Aktueller Hinweis">
             <p class="home-notice-title"><strong>Aktueller Hinweis</strong></p>
-            <p><strong>Bitte beachten Sie, dass ich derzeit kein Hundetraining und keine Verhaltensberatung anbiete.</strong></p>
-            <p><strong>Mein Angebot konzentriert sich aktuell auf die liebevolle Betreuung von Hunden, Katzen und Kleintieren in ihrem gewohnten Zuhause sowie auf meine weiteren Beratungsangebote rund um die Tierhaltung. Bitte schauen sie unter dem Menüpunkt <a class="home-notice-link" href="aktuellesangebot.html">Aktuelles Angebot</a>.</strong></p>
+            <p><strong>Bitte beachten Sie, dass ich derzeit kein Hundetraining und keine Verhaltensberatung für Hunde anbiete.</strong></p>
+            <p><strong>Mein Angebot konzentriert sich aktuell auf Beratungsangebote (auch für Hunde aus dem Ausland) und die liebevolle Betreuung von Hunden, Katzen und Kleintieren in ihrem gewohnten Zuhause. Bitte schauen Sie unter dem Menüpunkt <a class="home-notice-link" href="aktuellesangebot.html">Aktuelles Angebot</a>.</strong></p>
             <p><strong>Vielen Dank für Ihr Verständnis.</strong></p>
           </div>
 
-          <h1>Ziel ist nicht, dass dein Hund einfach „funktioniert“, sondern, dass er sich bei dir wirklich sicher fühlt.</h1>
+          <h1>Ziel ist nicht, dass Ihr Hund einfach „funktioniert“, sondern, dass er sich bei Ihnen wirklich sicher fühlt.</h1>
 
 <div class="intro-text">
   <p>Herzlich willkommen,</p>
 
-  <p>schön, dass du hier bist.</p>
+  <p>schön, dass Sie hier sind.</p>
 
   <p>Hunde bereichern unser Leben auf eine ganz besondere Weise – sie schenken uns Nähe, Freude und Verbindung. Gleichzeitig bringen sie manchmal auch Herausforderungen mit sich, die im Alltag verunsichern oder belasten können.</p>
 
-  <p>Wenn du dir Unterstützung wünschst oder einfach Klarheit in eure Situation bringen möchtest, melde dich gerne bei mir.</p>
+  <p>Wenn Sie sich Unterstützung wünschen oder einfach Klarheit in Ihre Situation bringen möchten, melden Sie sich gerne bei mir.</p>
 
-  <p>Ich freue mich darauf, euch kennenzulernen und ein Stück eures Weges begleiten zu dürfen.</p>
+  <p>Ich freue mich darauf, Sie kennenzulernen und ein Stück Ihres Weges begleiten zu dürfen.</p>
 </div>
 
           <div class="hero-actions">
@@ -1017,8 +1056,17 @@ main {
           </div>
         </div>
 
-        <div class="image-card">
-          <div class="hero-visual"></div>
+        <div class="image-card" id="trust-card">
+          <div class="image-stage" tabindex="0" aria-label="Vertrauen und Verschwiegenheit">
+            <div class="hero-visual"></div>
+            <div class="trust-panel" id="trust-panel">
+              <h2>Vertrauen &amp; Verschwiegenheit</h2>
+              <p>Durch meine jahrelange Erfahrung im Tierschutz weiß ich, dass sich viele Menschen nicht trauen, Hilfe zu suchen oder sie anzunehmen. Manchmal aus Angst, verurteilt zu werden, manchmal aus Scham oder weil man denkt: <em>„Das müsste ich doch eigentlich alleine schaffen.“</em></p>
+              <p>Deshalb möchte ich Ihnen sagen: Ihre Sorgen und Fragen sind bei mir in sicheren Händen.</p>
+              <p>Sie dürfen ehrlich sein – auch dann, wenn Ihnen etwas unangenehm ist oder Sie selbst nicht wissen, wie Sie mit einer Situation umgehen sollen. Ich begegne Ihnen und Ihrem Tier wertschätzend, offen und ohne Verurteilung. Was Sie mir anvertrauen, behandle ich selbstverständlich vertraulich.</p>
+              <p>Wir schauen gemeinsam hin und probieren alles, was im Rahmen meiner Möglichkeiten liegt, damit Sie und Ihr Tier sich miteinander wohlfühlen und Ihren gemeinsamen Weg gut meistern können. Sie müssen nicht alles alleine schaffen. ❤️</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1028,9 +1076,9 @@ main {
     <div class="overlay-box notice-overlay-box">
       <button class="overlay-close" id="close-notice" aria-label="Hinweis schließen">×</button>
       <h2 id="notice-title">Aktueller Hinweis</h2>
-      <p><strong>Bitte beachten Sie, dass ich derzeit kein Hundetraining und keine Verhaltensberatung anbiete.</strong></p>
-      <p><strong>Bitte schauen sie unter dem Menüpunkt <a href="aktuellesangebot.html">Aktuelles Angebot</a>.</strong></p>
-      <p><strong>Vielen Dank für Ihr Verständnis.</strong></p>
+      <p>Bitte beachten Sie, dass ich derzeit kein Hundetraining und keine Verhaltensberatung für Hunde anbiete.</p>
+      <p>Bitte schauen Sie unter dem Menüpunkt <a href="aktuellesangebot.html">Aktuelles Angebot</a>.</p>
+      <p>Vielen Dank für Ihr Verständnis.</p>
     </div>
   </div>
 
